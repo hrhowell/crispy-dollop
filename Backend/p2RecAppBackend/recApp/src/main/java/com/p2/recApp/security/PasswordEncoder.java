@@ -1,9 +1,9 @@
-package com.p2.recApp.users;
+package com.p2.recApp.security;
 
-import java.util.Optional;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 /*************************************Works Cited*********************************************
  * Title: "Java Tutorial - Complete User Login and Registration Backend + Email Verification"
  * Author: Nelson (amigoscode)
@@ -12,16 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
  * Availability: https://youtu.be/QwQuro7ekvc
  *********************************************************************************************/
 
-@Repository
-@Transactional(readOnly= true)
-public interface UserRepository {
-	
-	Optional<User> findByEmail(String email);
-	
-	//might need to change
-	Optional<User> findByUsername(String username);
-	Optional<User> findByPassword(String password);
-	
+
+@Configuration
+public class PasswordEncoder {
 //Q
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder(){
+		return new BCryptPasswordEncoder();
+	}
 	
 }
