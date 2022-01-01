@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Test from './components/Test';
+import Login from './components/Login';
+
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Test></Test>
+    <Login></Login>
+    //<Test></Test>
   );
 }
 
