@@ -21,11 +21,11 @@ export default function Login(){
                <div className="form">
                <div className="first-input">
                   <p>Username</p>
-                  <input type="text" placeholder="Enter Email" className="username"/>
+                  <input type="text" placeholder="Enter your email" className="username"/>
                 </div>
                 <div className="second-input">
                   <p>Password</p>
-                  <input type="password" placeholder="Enter Password" className="password"/>
+                  <input type="password" placeholder="Enter your password" className="password"/>
                 </div>
                </div>
                 <div className="login-button">

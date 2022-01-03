@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Test from './components/Test';
 import Login from './components/Login';
+import Home from './components/Home';
 
 
 function App() {
@@ -22,8 +23,10 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Login></Login>
-    //<Test></Test>
+     //<Test></Test>
+    //<Login></Login>
+    <Home></Home>
+   
   );
 }
 
