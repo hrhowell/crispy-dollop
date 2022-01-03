@@ -81,6 +81,7 @@ public class User /*implements UserDetails*/{
 	@Column(name="password")
 	private String password;
 	
+
 	//s3 key
 	@Column(name="profile_pic")
 	private String profile_pic;
@@ -96,6 +97,7 @@ public class User /*implements UserDetails*/{
 	@Enumerated(EnumType.STRING)
 	@Column(name="user_role")
 	private UserRole userRole;
+	
 	
 	//constructor with everything but ID
 	public User(String firstname, 
