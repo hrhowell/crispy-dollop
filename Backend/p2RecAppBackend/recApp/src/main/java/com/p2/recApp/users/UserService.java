@@ -37,7 +37,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 
-
+//may need to implement user details for update
 public class UserService/* implements UserDetailsService*/ {
 
 	//	private  BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -76,6 +76,8 @@ public class UserService/* implements UserDetailsService*/ {
 
 		return "";
 	}
+	
+	//Do we not need to enable user?
 
 	@Autowired
 	public UserService(UserRepository userRepository, FileStore fileStore) {
@@ -98,7 +100,14 @@ public class UserService/* implements UserDetailsService*/ {
 			String fav_rec) {
 		
 	}
-
+//	public void updateUser(){
+		//check user info
+		//get info
+		//set it
+		//post
+//	}
+	
+	
 	void uploadUserProfileImage(Integer userID, MultipartFile file) {
         // 1. Check if image is not empty
         isFileEmpty(file);

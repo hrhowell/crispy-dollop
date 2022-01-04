@@ -122,23 +122,12 @@ public class User /*implements UserDetails*/{
 	    }
 
 	//this is just a basic role, could implement more in the future
-//	@Override
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
-//		return Collections.singletonList(authority);
-//	}
-//
-//	@Override
-//	public String getPassword() {
-//		
-//		return password;
-//	}
-//
-//	@Override
-//	public String getUsername() {
-//		
-//		return username;
-//	}
+	 
+	 //added to get rid of error in UserService @ line 63
+	 public String getEmail() {		
+		return email;
+	}
+
 	
 	public Optional<String> getProfile_pic() {
 		return Optional.ofNullable(profile_pic);

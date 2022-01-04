@@ -18,6 +18,28 @@ public class RegistrationRequest {
 	private final String password;
 	
 	
+//	public String getEmail() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	public String getFirstname() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	public String getLastname() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	public String getUsername() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	public String getPassword() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+	
+	
 	
 
 }

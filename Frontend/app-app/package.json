@@ -9,13 +9,13 @@
     "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
+
     "react-scripts": "^5.0.0",
-=======
+
     "react-dropzone": "^11.4.2",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
->>>>>>> 8c8e71bf4f60827922bad361ea1aaee6f707246f
+
     "web-vitals": "^2.1.2"
   },
   "scripts": {
