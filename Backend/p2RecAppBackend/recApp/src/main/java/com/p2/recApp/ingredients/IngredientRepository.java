@@ -1,7 +1,9 @@
 package com.p2.recApp.ingredients;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +18,10 @@ import com.p2.recApp.users.User;
  *********************************************************************************************/
 @Repository
 @Transactional(readOnly= true)
-public interface IngredientRepository {
+public interface IngredientRepository extends JpaRepository<Ingredient, Integer>{
 	Optional<Ingredient> findByID(String ingID);
 	Optional<Ingredient> findByRecipe(String rec);
 	Optional<Ingredient> findByMealType(String meal_type);
 
+	
 }

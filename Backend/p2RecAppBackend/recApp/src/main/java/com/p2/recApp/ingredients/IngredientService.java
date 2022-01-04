@@ -1,8 +1,11 @@
 package com.p2.recApp.ingredients;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
-import com.p2.recApp.users.UserRepository;
+import com.p2.recApp.ingredients.IngredientRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -19,6 +22,25 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class IngredientService {
 	
-	private final IngredientRepository ingredientRepository = null;
+	private final IngredientRepository ingredientRepository;
+	private String recipe;
+	private String mealType;
+	private Integer ingID;
+	
+	public List<Ingredient> getAllIng() {
+		return ingredientRepository.findAll();
+		}
+	
+	public Optional<Ingredient> getByRec() {
+		return ingredientRepository.findByRecipe(recipe);
+	}
+	public Optional<Ingredient> getByMealType(){
+		return ingredientRepository.findByMealType(mealType );
+		
+	}
+	
+	public Optional<Ingredient> getByID(){
+		return ingredientRepository.findById(ingID);
+	}
 
 }

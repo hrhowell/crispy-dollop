@@ -2,7 +2,11 @@ package com.p2.recApp.users;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,10 +14,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -33,41 +38,63 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 
 @Entity
-public class User implements UserDetails{
+@Table(name="users")
+public class User /*implements UserDetails*/{
 	
 //	this sets a PK on the ID, sets up a sequence and says it
 //	increases by 1 and gives it to the generated value
+	
+	
+
 	@Id
 	@SequenceGenerator(
 			name="user_sequence",
 			sequenceName = "user_sequence",
 			allocationSize = 1
 			)
+	
+	
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE, 
 			generator= "user_sequence"
 			)
 	
-	//come back with @Columns
-	private Long userID;
+	private Integer userID;
+	
+	@Column(name="firstname")
 	private String firstname;
+	
+	@Column(name="lastname")
 	private String lastname;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="username")
 	private String username;
+	
+	@Column(name="password")
 	private String password;
+	
+	//s3 key
+	@Column(name="profile_pic")
 	private String profile_pic;
+	@Column(name="fav_rec")
 	private String fav_rec;
 	
 	//this has to do with security and login in the tutorial JAVA complete backend 
-	private Boolean locked;
-	private Boolean enabled;
+	@Column(name="locked")
+	private Boolean locked = false;
+	@Column(name="enabled")
+	private Boolean enabled = false;
+	
 	@Enumerated(EnumType.STRING)
+	@Column(name="user_role")
 	private UserRole userRole;
 	
 	//constructor with everything but ID
@@ -78,8 +105,6 @@ public class User implements UserDetails{
 				String password,
 				String profile_pic,
 				String fav_rec,
-				Boolean locked,
-				Boolean enabled,
 				UserRole userRole) {
 		super();
 		this.firstname = firstname;
@@ -87,57 +112,105 @@ public class User implements UserDetails{
 		this.email = email;
 		this.username = username;
 		this.password = password;
-		this.profile_pic = profile_pic;
+		this.profile_pic =profile_pic;
 		this.fav_rec = fav_rec;
-		this.locked = locked;
-		this.enabled = enabled;
 		this.userRole = userRole;
 	}
+	
+	 public Integer getUserID() {
+	        return userID;
+	    }
 
 	//this is just a basic role, could implement more in the future
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
-		return Collections.singletonList(authority);
+//	@Override
+//	public Collection<? extends GrantedAuthority> getAuthorities() {
+//		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
+//		return Collections.singletonList(authority);
+//	}
+//
+//	@Override
+//	public String getPassword() {
+//		
+//		return password;
+//	}
+//
+//	@Override
+//	public String getUsername() {
+//		
+//		return username;
+//	}
+	
+	public Optional<String> getProfile_pic() {
+		return Optional.ofNullable(profile_pic);
 	}
 
-	@Override
-	public String getPassword() {
-		
-		return password;
-	}
-
-	@Override
-	public String getUsername() {
-		
-		return username;
+	public void setProfile_pic(String profile_pic) {
+		this.profile_pic = profile_pic;
 	}
 	
-	//this is just if the user could delete their account
+//	//this is just if the user could delete their account
+//	@Override
+//	public boolean isAccountNonExpired() {
+//		
+//		return true;
+//	}
+//
+//	
+//	@Override
+//	public boolean isAccountNonLocked() {
+//		
+//		return !locked;
+//	}
+//
+//	//another check for the account
+//	@Override
+//	public boolean isCredentialsNonExpired() {
+//		
+//		return true;
+//	}
+//
+//	@Override
+//	public boolean isEnabled() {
+//		
+//		return enabled;
+//	}
+
 	@Override
-	public boolean isAccountNonExpired() {
-		
-		return true;
+	public int hashCode() {
+		return Objects.hash(email, enabled, fav_rec, firstname, lastname, locked, password, profile_pic, userID,
+				userRole, username);
 	}
 
-	
 	@Override
-	public boolean isAccountNonLocked() {
-		
-		return !locked;
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return 
+				Objects.equals(email, other.email)
+				&& Objects.equals(enabled, other.enabled)
+				&& Objects.equals(fav_rec, other.fav_rec) 
+				&& Objects.equals(firstname, other.firstname)
+				&& Objects.equals(lastname, other.lastname) 
+				&& Objects.equals(locked, other.locked)
+				&& Objects.equals(password, other.password) 
+				&& Objects.equals(profile_pic, other.profile_pic)
+				&& Objects.equals(userID, other.userID) 
+				&& userRole == other.userRole
+				&& Objects.equals(username, other.username);
 	}
 
-	//another check for the account
-	@Override
-	public boolean isCredentialsNonExpired() {
+	public User(String firstname, String lastname, String email, String username, String password, UserRole user) {
 		
-		return true;
 	}
 
-	@Override
-	public boolean isEnabled() {
+	public void setUserProfileImageLink(String filename) {
+		// TODO Auto-generated method stub
 		
-		return enabled;
 	}
 
 }

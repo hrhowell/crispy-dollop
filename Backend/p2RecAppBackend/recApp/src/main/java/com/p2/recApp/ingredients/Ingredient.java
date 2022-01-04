@@ -1,9 +1,13 @@
 package com.p2.recApp.ingredients;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
 
@@ -20,16 +24,18 @@ import lombok.ToString;
  * Code Version: Java 15
  * Availability: https://youtu.be/QwQuro7ekvc
  *********************************************************************************************/
-
-@Getter
-@Setter
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+//
+////@Getter
+////@Setter
+////@EqualsAndHashCode
+////@AllArgsConstructor
+////@NoArgsConstructor
+////@ToString
 
 
 @Entity
+@Table(name="ingredients")
+@Access(value= AccessType.FIELD)
 public class Ingredient  {
 
 	@Id
@@ -40,14 +46,21 @@ public class Ingredient  {
 			)
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE, 
-			generator= "user_sequence"
+			generator= "ing_sequence"
 			)
 	
-	//come back and annotate with hibernate syntax
-	private int ingID;
+	private Integer ingID;
+	
+	@Column(name= "ing_name")
 	private String ing_name;
+	
+	@Column(name= "rec")
 	private String rec;
+	
+	@Column(name= "ing_type")
 	private String ing_type;
+	
+	@Column(name= "meal_type")
 	private String meal_type;
 	
 	
