@@ -1,5 +1,6 @@
 package com.p2.recApp.users;
 
+import java.time.LocalDateTime;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.p2.recApp.bucket.BucketName;
 import com.p2.recApp.filestore.FileStore;
+import com.p2.recApp.registration.token.ConfirmationToken;
+import com.p2.recApp.registration.token.ConfirmationTokenService;
 
 import lombok.AllArgsConstructor;
 /*************************************Works Cited*********************************************
@@ -36,9 +39,14 @@ import lombok.AllArgsConstructor;
  *********************************************************************************************/
 
 @Service
+<<<<<<< HEAD
 
 //may need to implement user details for update
 public class UserService/* implements UserDetailsService*/ {
+=======
+@AllArgsConstructor
+public class UserService {
+>>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 
 	//	private  BCryptPasswordEncoder bCryptPasswordEncoder;
 	//	
@@ -54,9 +62,14 @@ public class UserService/* implements UserDetailsService*/ {
 	//								));
 	//}
 
+	
+	
 	private final FileStore fileStore;
 	private final UserRepository userRepository;
 	private Integer userID;
+	private final static String USER_NOT_FOUND_MSG = 
+			"user with email %s not found";
+	private final ConfirmationTokenService confirmationTokenService;
 	
 	public String signUpUser(User user) {
 
@@ -74,15 +87,34 @@ public class UserService/* implements UserDetailsService*/ {
 
 		//TODO: send confirmation token 
 
+<<<<<<< HEAD
 		return "";
 	}
 	
 	//Do we not need to enable user?
+=======
+		String token = UUID.randomUUID().toString();
+		ConfirmationToken cofirmationToken = new ConfirmationToken(
+				token,
+				LocalDateTime.now(),
+				LocalDateTime.now().plusMinutes(15),
+				user
+		);
+		
+		confirmationTokenService.saveConfirmationToken(cofirmationToken);
+>>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 
+//		TODO: SEND EMAIL
+		
+		
+		return token;
+	}
+	
 	@Autowired
 	public UserService(UserRepository userRepository, FileStore fileStore) {
 		this.fileStore = fileStore;
 		this.userRepository = userRepository;
+		this.confirmationTokenService = null;
 	}
 
 	List <User> getUserProfiles(){
@@ -176,6 +208,10 @@ public class UserService/* implements UserDetailsService*/ {
 		        if (file.isEmpty()) {
 		            throw new IllegalStateException("Cannot upload empty file [ " + file.getSize() + "]");
 		        }
+		    }
+
+		    public int enableUser(String email) {
+		        return userRepository.enableUser(email);
 		    }
 
 

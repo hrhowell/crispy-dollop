@@ -1,7 +1,7 @@
 import './Login.css';
-//import profile from './images/profile.jpg';
-//import email from './images/email.jpg';
-//import pass from './images/fa.PNG';
+import profile from './images/profile.jpg';
+import email from './images/email.jpg';
+import pass from './images/fa.PNG';
 export default function Login(){
     return(
       <>
@@ -10,7 +10,7 @@ export default function Login(){
             <div>
               <div className="imgs">
                 <div className="container-image">
-                  {/* <img src={profile} alt="profile" className="profile"/> */}
+                  <img src={profile} alt="profile" className="profile"/>
                 </div>
               </div>
               <div>
@@ -31,7 +31,7 @@ export default function Login(){
                   <button>Login</button>
                 </div>
                 <p className="link">
-                  <a href="/passwordrecovery">Forgot Password </a> Or <a href="#">Sign Up</a>
+                  <a href="#">Forgot Password ?</a> Or <a href="#">Sign Up</a>
                 </p>
                 </div>
             </div>

@@ -17,6 +17,7 @@ import Dinner from './components/pages/Dinner'
 import Logout from './components/pages/Logout';
 import Recipes from './components/pages/Recipes';
 import SignUp from './components/pages/SignUp';
+import PasswordRecovery from './components/pages/PasswordRecovery';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
         <Route path ="/lunch" element={<Lunch/>}/>
         <Route path ="/dinner" element={<Dinner/>}/>
         <Route path ="/sign-up" element={<SignUp/>}/>
+
+        <Route path ="/passwordrecovery" element={<PasswordRecovery/>}/>
 
       </Routes>
     </Router>

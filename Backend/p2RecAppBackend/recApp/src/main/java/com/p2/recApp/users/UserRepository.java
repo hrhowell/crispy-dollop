@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 /*************************************Works Cited*********************************************
@@ -18,13 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly= true)
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
-//	Optional<User> findByEmail(String email);
-//	Optional<User> findByUsername(String username);
-//	Optional<User> findByPassword(String password); 
 	
-//	User findById(Integer userID);
-	List<User> findAll();
 	Optional<User> findByEmail(String email);
+<<<<<<< HEAD
 	Optional<User> findById(Integer userID);
 	Optional<User> addUser(
 			String firstname,
@@ -42,7 +40,17 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 			String profile_pic,
 			String fav_rec);
 
+=======
+>>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 	
-	
-
+	//might need to change
+	Optional<User> findByUsername(String username);
+	Optional<User> findByPassword(String password);
+	List<User> findAll();
+//Q
+	@Transactional
+    @Modifying
+    @Query("UPDATE User a " +
+            "SET a.enabled = TRUE WHERE a.email = ?1")
+    int enableUser(String email);
 }

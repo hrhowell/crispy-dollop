@@ -9,7 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 import org.springframework.data.annotation.Id;
+=======
+import javax.persistence.Id;
+>>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -39,6 +43,7 @@ import lombok.ToString;
 public class Ingredient  {
 
 	@Id
+<<<<<<< HEAD
 	@SequenceGenerator(
 			name="ing_sequence",
 			sequenceName = "ing_sequence",
@@ -49,6 +54,18 @@ public class Ingredient  {
 			generator= "ing_sequence"
 			)
 	
+=======
+//	@SequenceGenerator(
+//			name="ing_sequence",
+//			sequenceName = "ing_sequence",
+//			allocationSize = 1
+//			)
+//	@GeneratedValue(
+//			strategy = GenerationType.SEQUENCE, 
+//			generator= "ing_sequence"
+//			)
+//	
+>>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 	private Integer ingID;
 	
 	@Column(name= "ing_name")

@@ -72,6 +72,11 @@ export function Navbar() {
                            Logout
                         </Link>
                     </li>
+                    <li className='nav-item'>
+                        <Link to='/passwordrecovery' className='nav-links' onClick={closeMobileMenu}>
+                           Password Recovery
+                        </Link>
+                    </li>
                 </ul>
                 {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
             </div>
