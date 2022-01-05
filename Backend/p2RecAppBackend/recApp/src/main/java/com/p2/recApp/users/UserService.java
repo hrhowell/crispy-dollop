@@ -39,14 +39,9 @@ import lombok.AllArgsConstructor;
  *********************************************************************************************/
 
 @Service
-<<<<<<< HEAD
-
+@AllArgsConstructor
 //may need to implement user details for update
 public class UserService/* implements UserDetailsService*/ {
-=======
-@AllArgsConstructor
-public class UserService {
->>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
 
 	//	private  BCryptPasswordEncoder bCryptPasswordEncoder;
 	//	
@@ -60,9 +55,7 @@ public class UserService {
 	//						() -> new UsernameNotFoundException(
 	//								String.format(USER_NOT_FOUND_MSG, email)
 	//								));
-	//}
-
-	
+	//}	
 	
 	private final FileStore fileStore;
 	private final UserRepository userRepository;
@@ -70,6 +63,11 @@ public class UserService {
 	private final static String USER_NOT_FOUND_MSG = 
 			"user with email %s not found";
 	private final ConfirmationTokenService confirmationTokenService;
+	private String username;
+	private String password;
+	private String email;
+	private String firstname;
+	private String lastname;
 	
 	public String signUpUser(User user) {
 
@@ -87,28 +85,23 @@ public class UserService {
 
 		//TODO: send confirmation token 
 
-<<<<<<< HEAD
+
 		return "";
 	}
 	
 	//Do we not need to enable user?
-=======
-		String token = UUID.randomUUID().toString();
-		ConfirmationToken cofirmationToken = new ConfirmationToken(
-				token,
-				LocalDateTime.now(),
-				LocalDateTime.now().plusMinutes(15),
-				user
-		);
-		
-		confirmationTokenService.saveConfirmationToken(cofirmationToken);
->>>>>>> 8b815e6e41071e50229d9107d4b26aa6c70b3890
-
-//		TODO: SEND EMAIL
-		
-		
-		return token;
-	}
+//
+//		String token = UUID.randomUUID().toString();
+//		ConfirmationToken cofirmationToken = new ConfirmationToken(
+//				token,
+//				LocalDateTime.now(),
+//				LocalDateTime.now().plusMinutes(15),
+//				user
+//		);
+//		
+//		confirmationTokenService.saveConfirmationToken(cofirmationToken);		
+//		return token;
+//	}
 	
 	@Autowired
 	public UserService(UserRepository userRepository, FileStore fileStore) {
@@ -132,12 +125,31 @@ public class UserService {
 			String fav_rec) {
 		
 	}
-//	public void updateUser(){
-		//check user info
-		//get info
-		//set it
-		//post
-//	}
+	
+	public String updateUser(User user) {
+		
+		boolean userExists = userRepository.findByEmail(user.getEmail()).isPresent();
+
+		if(!userExists) {
+			throw new IllegalStateException("user doesn't exist");
+		}
+		
+		String username = this.username;
+		String password = this.password;
+		String email = this.email;
+		String firstname = this.firstname;
+		String lastname = this.lastname;
+//		
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setEmail(email);
+		user.setUsername(firstname);
+		user.setLastname(lastname);
+//		
+		userRepository.save(user);
+		
+		return "user updated!";
+	}
 	
 	
 	void uploadUserProfileImage(Integer userID, MultipartFile file) {
@@ -162,7 +174,6 @@ public class UserService {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-
     }
 	
 	  byte[] downloadUserProfileImage(Integer userID) {
@@ -172,10 +183,7 @@ public class UserService {
 	                BucketName.PROFILE_IMAGE.getBucketName(),
 	                user.getUserID());
 
-	        return user.getProfile_pic()
-	                .map(key -> fileStore.download(path, key))
-	                .orElse(new byte[0]);
-
+	        return user.getProfile_pic().map(key -> fileStore.download(path, key)).orElse(new byte[0]);
 	    }
 		
 		

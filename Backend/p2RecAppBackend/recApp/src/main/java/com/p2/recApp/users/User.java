@@ -202,4 +202,24 @@ public class User /*implements UserDetails*/{
 		
 	}
 
+	public void setUsername(String username) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setPassword(String password) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setEmail(String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setLastname(String lastname) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
