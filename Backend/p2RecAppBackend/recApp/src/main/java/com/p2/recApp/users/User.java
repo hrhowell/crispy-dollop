@@ -38,11 +38,8 @@ import lombok.ToString;
  *********************************************************************************************/
 //this is lombok, it generates getters and setters with annotations
 
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
-@ToString
+
+
 @Entity
 @Table(name="users")
 public class User /*implements UserDetails*/{
@@ -128,25 +125,64 @@ public class User /*implements UserDetails*/{
 	        return userID;
 	    }
 
-	//this is just a basic role, could implement more in the future
-//	@Override
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
-//		return Collections.singletonList(authority);
-//	}
-//
-//	@Override
-//	public String getPassword() {
-//		
-//		return password;
-//	}
-//
-//	@Override
-//	public String getUsername() {
-//		
-//		return username;
-//	}
 	
+	
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFav_rec() {
+		return fav_rec;
+	}
+
+	public void setFav_rec(String fav_rec) {
+		this.fav_rec = fav_rec;
+	}
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	public Optional<String> getProfile_pic() {
 		return Optional.ofNullable(profile_pic);
 	}
@@ -155,32 +191,7 @@ public class User /*implements UserDetails*/{
 		this.profile_pic = profile_pic;
 	}
 	
-//	//this is just if the user could delete their account
-//	@Override
-//	public boolean isAccountNonExpired() {
-//		
-//		return true;
-//	}
-//
-//	
-//	@Override
-//	public boolean isAccountNonLocked() {
-//		
-//		return !locked;
-//	}
-//
-//	//another check for the account
-//	@Override
-//	public boolean isCredentialsNonExpired() {
-//		
-//		return true;
-//	}
-//
-//	@Override
-//	public boolean isEnabled() {
-//		
-//		return enabled;
-//	}
+
 
 	@Override
 	public int hashCode() {
@@ -218,60 +229,36 @@ public class User /*implements UserDetails*/{
 	}
 	
 
-	public void setUserProfileImageLink(String filename) {
-		// TODO Auto-generated method stub
-		
+	public void setUserID(Integer userID) {
+		this.userID = userID;
+	}
+
+	
+
+	public User() {
+		super();
+	}
+
+	public User(Integer userID, String firstname, String lastname, String email, String username, String password,
+			String profile_pic, String fav_rec, Boolean locked, Boolean enabled, UserRole userRole) {
+		super();
+		this.userID = userID;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.profile_pic = profile_pic;
+		this.fav_rec = fav_rec;
+		this.locked = locked;
+		this.enabled = enabled;
+		this.userRole = userRole;
 	}
 
 	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		
-		return this.email;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public String getFav_rec() {
-		return fav_rec;
-	}
-
-	public void setFav_rec(String fav_rec) {
-		this.fav_rec = fav_rec;
 	}
 
 	public Boolean getLocked() {
@@ -282,13 +269,7 @@ public class User /*implements UserDetails*/{
 		this.locked = locked;
 	}
 
-	public Boolean getEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-	}
+	
 
 	public UserRole getUserRole() {
 		return userRole;

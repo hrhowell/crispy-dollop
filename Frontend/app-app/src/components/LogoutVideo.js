@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './Button';
+import {ButtonVideo} from './ButtonVideo'
 import './Logout.css';
 import '../App.css';
 
@@ -11,20 +11,20 @@ function LogoutVideo() {
                 <h1 id='videoH1'>Happy Cooking!</h1>
                 <p id='videoP'>No thyme for complicated recipies? No Worries, We'll make it easy!</p>
                 <div className='video-btns'>
-                    <Button 
+                    <ButtonVideo 
                         className='btns' buttonStyle='btn--outline' 
                         buttonSize='btn--large'>
                         Return to home
-                    </Button>
-                    <Button 
+                    </ButtonVideo>
+                    <ButtonVideo 
                         className='btns' buttonStyle='btn--primary' 
                         buttonSize='btn--large'>
                         Watch a video! <i className='far fa-play-circle'/>
-                    </Button>
+                    </ButtonVideo>
                 </div>
             </div>
         </div>
     )
 }
 
-export default LogoutVideo
+export default LogoutVideo;
