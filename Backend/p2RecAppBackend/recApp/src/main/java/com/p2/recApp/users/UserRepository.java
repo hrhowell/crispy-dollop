@@ -29,8 +29,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 //			String lastname,
 //			String emial,
 //			String username,
-//			String password);
-	
+//			String password);	
 //	Optional<User> updateUser(
 //			String firstname,
 //			String lastname,
@@ -39,7 +38,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 //			String password,
 //			String profile_pic,
 //			String fav_rec);
-
 
 	
 	//might need to change

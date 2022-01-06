@@ -64,5 +64,8 @@ public class UserController {
 	        return userService.downloadUserProfileImage(userID);
 	    }
 	
+	 @PostMapping(
+			 //RequestMapping may be better?
+			 )
 	
 }
