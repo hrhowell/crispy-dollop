@@ -7,7 +7,7 @@ import { RecipeButton } from "../../RecipeButton";
 function CeleryBoat (){
     return(
     <>
-    <img src='images/celery.jpg'/>
+    
     <Navbar/>
     <img src="images/celery.jpg"/>
     <CeleryIng/>

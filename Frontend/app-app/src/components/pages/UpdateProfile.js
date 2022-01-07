@@ -4,6 +4,7 @@ function UpdateProfile() {
     return (
         <>
         <Navbar/>
+        
         </>
     )
 }
