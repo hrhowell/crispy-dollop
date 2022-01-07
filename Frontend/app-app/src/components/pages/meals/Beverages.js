@@ -10,11 +10,6 @@ function Beverages() {
         <BeveragesCards/>
 
         <div>
-            
-           
-           
-           
-           
 
         </div>
         </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
+
 /**********************************Works Cited************************************
  * Title: React Website Tutorial - Beginner React JS Project Fully Responsive
  * Author: Brian Design 
@@ -13,7 +14,7 @@ const STYLES = ['btn--primary', 'btn--outline'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-export const ButtonVideo = ({
+export const RecipeButton = ({
     children,
     type,
     onClick,
@@ -25,13 +26,13 @@ export const ButtonVideo = ({
         const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
         return(
-            <Link to="/" className='btn-mobile'>
+            <Link to="/recipes" className='btn-mobile'>
                 <button
                 className={`btn ${checkButtonStyle} ${checkButtonSize}`}
                 onClick={onClick}
                 type={type}
                 >
-                Return to Home
+                Return to Recipes
                 </button>
             </Link>
         )

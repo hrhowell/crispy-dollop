@@ -11,7 +11,7 @@ export const PavlovaIng = ()=> {
 
     const fetchPavlovaIng = ()=>{
         var recipe = "pasta";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{
+        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setPavlovaIng(res.data);
         });
@@ -26,7 +26,7 @@ export const PavlovaIng = ()=> {
     return pavlovaIng.map((ingredient, index) =>{
         return (
             <div key={index}>
-                <p>User ID: {ingredient.ingName}</p>
+                <h3>Ingredient: {ingredient.ingName}</h3>
                
             </div>
         )

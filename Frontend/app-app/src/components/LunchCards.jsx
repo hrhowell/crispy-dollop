@@ -23,7 +23,7 @@ function LunchCards() {
                 <div className="cards__wrapper">
                     <ul className="cards__item">
                          <CardItem 
-                        src='images/bento.jpg'
+                        src='images/katsu.jpg'
                         text=" Katsu Pork Bento Box"
                         label= "Bento"
                         path="/bento"

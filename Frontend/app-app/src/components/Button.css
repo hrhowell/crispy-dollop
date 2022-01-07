@@ -12,6 +12,7 @@
      --primary: #fff;
  }
  .btn{
+     margin-top: 10%;
      padding: 8px 20 px;
      border-radius: 2px;
      outline: none;
