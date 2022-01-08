@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../Navbar";
 import '../../UserProfiles.css';
 import {ToastIng} from '../RecApiCalls/ToastApi';
-import { RecipeButton } from "../../RecipeButton";
+import { RecipeButton } from '../../buttons/RecipeButton'
 
 function Toast () {
     return(

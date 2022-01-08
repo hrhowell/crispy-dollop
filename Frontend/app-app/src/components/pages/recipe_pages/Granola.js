@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../../UserProfiles.css';
 import {GranolaIng} from '../RecApiCalls/GranolaApi';
-import { RecipeButton } from "../../RecipeButton";
+import { RecipeButton } from '../../buttons/RecipeButton';
 
 function Granola (){
     return(

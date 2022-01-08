@@ -1,6 +1,6 @@
 import '../../App.css';
-import VideoSection from '../VideoSection';
-import Navbar from '../Navbar';
+import VideoSection from '../../VideoSection';
+import Navbar from '../../Navbar';
 
 function Home(){
     return (

@@ -50,16 +50,16 @@ public class IngredientController {
 		return ingredientService.getAllIng();
 	}
 	
-	@GetMapping("/{recipe}")
+	@GetMapping("/ingredients/{recipe}")
 	public List<Ingredient> getByRec(@PathVariable("recipe") String recipe){
 		return ingredientService.getByRec(recipe);
 	}
 	
-	@GetMapping("/all-recipes")
-	public ArrayList<Recipe> getAllRec(){
-		
-		return recipes();
-	}
+//	@GetMapping("/all-recipes")
+//	public ArrayList<Recipe> getAllRec(){
+//		
+//		return recipes();
+//	}
 	
 	public ArrayList<Recipe> recipes(){
 		

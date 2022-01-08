@@ -50,6 +50,8 @@ public class UserService/* implements UserDetailsService*/ {
 	private String firstname;
 	private String lastname;
 	private String profile_pic;
+	private UserRole USER;
+	private Integer userID;
 	
 	
 	public String signUpUser(User user) {
@@ -59,7 +61,8 @@ public class UserService/* implements UserDetailsService*/ {
 		if(userExists) {
 			throw new IllegalStateException("email taken");
 		}
-
+		
+		user.setUserRole(USER);
 		
 		userRepository.save(user);
 
@@ -105,6 +108,12 @@ public class UserService/* implements UserDetailsService*/ {
 		return userRepository.findAll();
 	}
 	
+	
+	User getUser(User user) {
+		Integer userID = user.getUserID();
+		return userRepository.getById(userID);
+		
+	}
 
 	void uploadUserProfileImage(Integer userID, MultipartFile file) {
         // 1. Check if image is not empty

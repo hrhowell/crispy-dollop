@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../../UserProfiles.css';
 import {BobaIng}from '../RecApiCalls/BobaApi';
-import { RecipeButton } from "../../RecipeButton";
+import { RecipeButton } from "../../buttons/RecipeButton";
 
 function BobaTea (){
     return(

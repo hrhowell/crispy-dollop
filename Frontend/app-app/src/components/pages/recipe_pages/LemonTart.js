@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../../UserProfiles.css';
 import { LemonTartIng } from '../RecApiCalls/LemonTartApi';
-import { RecipeButton } from "../../RecipeButton";
+import { RecipeButton } from '../../buttons/RecipeButton';
 
 function LemonTart (){
     return(
