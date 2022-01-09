@@ -6,8 +6,6 @@ import './UserProfiles.css';
 
 export const UserProfiles = ()=> {
 
-   
-
     const [userProfiles, setUserProfiles] = useState([]);
 
     const fetchUserProfiles = ()=>{

@@ -1,25 +1,25 @@
 import axios from "axios";
 import React, {useState, useEffect, useCallback}from "react";
 import {useDropzone} from 'react-dropzone';
-import '../utilpages/UserProfiles.css';
+import './UserProfiles.css';
 
-export const ProfileConst = ()=> {
-   
-    const [userProfile, setUserProfile] = useState([]);
 
-    const fetchUserProfile= ()=>{
-        var userID =  "1";
-        axios.get(`http://localhost:9090/api/v1/users/${userID}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+export const AllRecipes = ()=> {
+
+    const [AllRecipes, setAllRecipes] = useState([]);
+
+    const fetchAllRecipes = ()=>{
+        axios.get("http://localhost:9090/api/v1/users").then(res =>{ //http://3.14.3.79:9090/api/v1/users
             console.log(res);
-            setUserProfile(res.data);
+            setAllRecipes(res.data);
         });
     }
 
     useEffect(()=>{
-        fetchUserProfile();
+        fetchAllRecipes();
     }, [] );
 
-    return userProfile.map((user, index) =>{
+    return AllRecipes.map((user, index) =>{
         return (
             <div key={index}>
                 {user.userID ? (
@@ -37,8 +37,7 @@ export const ProfileConst = ()=> {
                 <br/>
             </div>
         )
-     }); 
-
+    }); 
 
     function Dropzone({userID}) {
         const onDrop = useCallback(acceptedFiles => {
@@ -63,8 +62,9 @@ export const ProfileConst = ()=> {
                 ).catch(err =>{
                          console.log(err);
                           })
+
+
         }, [])
-        
         const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
       
         return (

@@ -17,6 +17,8 @@
 //   const [firstName, setFirstName] = useState("");
 //   const [lastName, setLastName] = useState("");
 //   const [userName, setUserName] = useState(""); 
+//   const [userRole, setUserRole] = useState(""); 
+
  
 //     return (
 //         <div className="App">
@@ -30,6 +32,7 @@
 //           onChange={(e) => setFirstName(e.target.value)}
 //           onChange={(e) => setLastName(e.target.value)}
 //           onChange={(e) => setUserName(e.target.value)}
+//           onChange={(e) => setUserRole(e.target.value)}
           
 //         />
 

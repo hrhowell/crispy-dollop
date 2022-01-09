@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
+import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +27,7 @@ import lombok.ToString;
 
 
 
-
+@Component
 @Entity
 @Table(name="ingredients")
 
@@ -35,14 +35,25 @@ public class Ingredient  {
 	
 	@Id
 	
-	
-	
 	@GeneratedValue(
 			strategy = GenerationType.IDENTITY
 			)
 	
 	@Column(name="ingID")
 	private Integer ingID;
+	
+	
+	@Column(name= "ing_name")
+	private String ingName;
+	
+	@Column(name= "rec")
+	private String recipe;
+	
+	@Column(name= "ing_type")
+	private String ingType;
+	
+	@Column(name= "meal_type")
+	private String mealType;
 	
 	public Ingredient(Integer ingID, String ingName, String recipe, String ingType, String mealType) {
 		super();
@@ -99,18 +110,6 @@ public class Ingredient  {
 		this.mealType = mealType;
 	}
 
-	@Column(name= "ing_name")
-	private String ingName;
-	
-	@Column(name= "rec")
-	private String recipe;
-	
-	@Column(name= "ing_type")
-	private String ingType;
-	
-	@Column(name= "meal_type")
-	private String mealType;
-	
 	
 
 }
