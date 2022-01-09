@@ -20,7 +20,7 @@ export const ProfileConst = ()=> {
     }, [] );
 
     return userProfile.map((user, index) =>{
-        return (
+        
             <div key={index}>
                 {user.userID ? (
                     <img 
@@ -36,7 +36,7 @@ export const ProfileConst = ()=> {
                 <Dropzone {...user}/>
                 <br/>
             </div>
-        )
+        
      }); 
 
 

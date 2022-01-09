@@ -72,52 +72,52 @@ public class RecipeController {
 		System.out.println(recipeRepo.findByStatus("approved"));
 		return recipeRepo.findByStatus("approve");
 	}
-	
-	@PostMapping("/admin-approve/{recipe}")
-	public String approveRec(
-			@PathVariable("recipe") String recName{
-		
-		System.out.println(recName);
-		Recipe newRecipe = new Recipe();
-		Optional<Recipe> recipe = recipeRepo.findByRecName(recName);
-		System.out.println(recipeRepo.findByRecName(recName));
-		//old info
-//		Integer ID = recipe.getRecID();
-//		String name = recipe.getRecName();
-//		String meal = recipe.getMealType();
-//		String ing1 = recipe.getIng1();
-//		String ing2 = recipe.getIng2();
-//		String ing3 = recipe.getIng3();
-//		String ing4 = recipe.getIng4();
-//		String ing5 = recipe.getIng5();
-		
-		System.out.println(recipe);
-		//new info 
-		newRecipe = recipe;
-		newRecipe.setRecName(name);
-		newRecipe.setMealType(meal);
-		newRecipe.setIng1(ing1);
-		newRecipe.setIng2(ing2);
-		newRecipe.setIng3(ing3);
-		newRecipe.setIng4(ing4);
-		newRecipe.setIng5(ing5);
-		newRecipe.setStatus("approved");
-		System.out.println(recipe.getStatus(recName));
-		
-		//save new rec/insert into DB
-		recipeRepo.save(newRecipe);
-		
-		//find and delete old entry
-		
-		
-		 recipeRepo.deleteById(ID);
-		
-		System.out.println();
-		return "recipe successfully added!";
-		
-	}
-
-
+//	
+//	@PostMapping("/admin-approve/{recipe}")
+//	public String approveRec(
+//			@PathVariable("recipe") String recName{
+//		
+//		System.out.println(recName);
+//		Recipe newRecipe = new Recipe();
+//		Optional<Recipe> recipe = recipeRepo.findByRecName(recName);
+//		System.out.println(recipeRepo.findByRecName(recName));
+//		//old info
+////		Integer ID = recipe.getRecID();
+////		String name = recipe.getRecName();
+////		String meal = recipe.getMealType();
+////		String ing1 = recipe.getIng1();
+////		String ing2 = recipe.getIng2();
+////		String ing3 = recipe.getIng3();
+////		String ing4 = recipe.getIng4();
+////		String ing5 = recipe.getIng5();
+//		
+//		System.out.println(recipe);
+//		//new info 
+////		newRecipe = recipe;
+////		newRecipe.setRecName(name);
+////		newRecipe.setMealType(meal);
+////		newRecipe.setIng1(ing1);
+////		newRecipe.setIng2(ing2);
+////		newRecipe.setIng3(ing3);
+////		newRecipe.setIng4(ing4);
+////		newRecipe.setIng5(ing5);
+////		newRecipe.setStatus("approved");
+////		System.out.println(recipe.getStatus(recName));
+//		
+//		//save new rec/insert into DB
+//		recipeRepo.save(newRecipe);
+//		
+//		//find and delete old entry
+//		
+//		
+////		 recipeRepo.deleteById(ID);
+//		
+//		System.out.println();
+//		return "recipe successfully added!";
+//		
+//	}
+//
+//
 
 
 
