@@ -3,6 +3,14 @@ import React, {useState, useEffect, useCallback}from "react";
 import {useDropzone} from 'react-dropzone';
 import '../utilpages/UserProfiles.css';
 
+/**********************************WorksCited******************************************
+ * Title: NA
+ * Author: Jeremy Zhu
+ * Date: 1/9/22
+ * Code Verion: React
+ * Availability: NA
+ **************************************************************************************/
+
 export const ProfileConst = ()=> {
    
     const [userProfile, setUserProfile] = useState([]);
@@ -15,29 +23,39 @@ export const ProfileConst = ()=> {
         });
     }
 
+console.log(userProfile);
     useEffect(()=>{
         fetchUserProfile();
     }, [] );
 
-    return userProfile.map((user, index) =>{
+    return( 
+        <>
+      
+           
+           <div key={userProfile.userID}>
+           {userProfile.userID ? (
+               <img 
+                   src={`http://localhost:9090/api/v1/users/${userProfile.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
+                 />
+           ):null}
+          <br/>
+          <br/>
+           <h1>{userProfile.firstname} {userProfile.lastname}</h1>
+           <p>User ID: {userProfile.userID}</p>
+           <p>Email: {userProfile.username}</p>
+           <p>Email: {userProfile.email}</p>
+           <p>Favorite Recipe: {userProfile.fav_rec}</p>
+           <Dropzone {...userProfile}/>
+
+           <br/>
+           
+       </div>
+
+       
         
-            <div key={index}>
-                {user.userID ? (
-                    <img 
-                        src={`http://localhost:9090/api/v1/users/${user.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
-                    />
-                ):null}
-               <br/>
-               <br/>
-                <h1>{user.firstname} {user.lastname}</h1>
-                <p>User ID: {user.userID}</p>
-                <p>Email: {user.email}</p>
-                <p>Favorite Recipe: {user.fav_rec}</p>
-                <Dropzone {...user}/>
-                <br/>
-            </div>
-        
-     }); 
+            
+        </>
+     )
 
 
     function Dropzone({userID}) {
@@ -63,7 +81,10 @@ export const ProfileConst = ()=> {
                 ).catch(err =>{
                          console.log(err);
                           })
+                          
+                          setTimeout(function() {(window.location.reload(true))}, 1500);     
         }, [])
+        
         
         const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
       
@@ -75,6 +96,8 @@ export const ProfileConst = ()=> {
                 <p>Drop the image here ...</p> :
                 <p>Drag 'n' drop a profile picture here, or click to select a profile picture</p>
             }
+
+            
           </div>
         )
     }
