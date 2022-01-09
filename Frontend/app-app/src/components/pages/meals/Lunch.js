@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../Navbar';
 import '../../../App.css';
-import LunchCards from '../../LunchCards';
+import LunchCards from '../../cards/LunchCards';
 
 
 

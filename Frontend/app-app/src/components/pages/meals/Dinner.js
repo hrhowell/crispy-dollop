@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from '../../Navbar';
 import '../../../App.css';
-import DinnerCards from '../../DinnerCards';
+import DinnerCards from '../../cards/DinnerCards';
+
+
 /**********************************Works Cited******************************************************
  * <a href='https://www.freepik.com/photos/food'>Food photo created by jcomp - www.freepik.com</a>
  * 

@@ -1,6 +1,7 @@
-import Navbar from '../Navbar';
-import '../../App.css';
-import LogoutVideo from '../LogoutVideo';
+import Navbar from '../../Navbar';
+import '../../../App.css';
+import LogoutVideo from '../../videos/LogoutVideo';
+import './Logout.css';
 
 
 function Logout() {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useState, useEffect, useCallback}from "react"
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 
 export const GelatoIng = ()=> {
 
@@ -12,7 +12,7 @@ export const GelatoIng = ()=> {
 
     const fetchGelatoIng = ()=>{
         var recipe = "black_forest_gelato_with_ganache";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.get(`http://localhost:9090/api/v1/ingredients/recipes/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setGelatoIng(res.data);
         });

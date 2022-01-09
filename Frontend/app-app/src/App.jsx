@@ -2,12 +2,12 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 //Utilities
-import Users from './components/Users';
-import Home  from './components/pages/Home';
-import Login from './components/pages/Login';
-import Logout from './components/pages/Logout';
-import SignUp from './components/pages/SignUp';
-import UpdateProfile from './components/pages/UpdateProfile';
+import Users from './components/pages/utilpages/Users';
+import Home  from './components/pages/utilpages/Home';
+// import Login from './components/pages/utilpages/Login';
+import Logout from './components/pages/utilpages/Logout';
+import SignUp from './components/pages/utilpages/SignUp';
+import UpdateProfile from './components/pages/utilpages/UpdateProfile';
 
 //MealTypes
 import Desserts from './components/pages/meals/Desserts';
@@ -18,7 +18,7 @@ import Dinner from './components/pages/meals/Dinner';
 import Beverages from './components/pages/meals/Beverages';
 
 //Recipies
-import Recipes from './components/pages/Recipes';
+import Recipes from './components/pages/utilpages/Recipes';
 
 /*breakfast*/
 import Pancakes from './components/pages/recipe_pages/Pancakes';
@@ -50,6 +50,7 @@ import Latte from './components/pages/recipe_pages/Latte';
 import BobaTea from './components/pages/recipe_pages/BobaTea';
 import OrangeJuice from './components/pages/recipe_pages/OrangeJuice';
 import Punch from './components/pages/recipe_pages/Punch';
+import Profile from './components/pages/utilpages/Profile';
 
 
 
@@ -62,7 +63,8 @@ function App() {
       <Routes>
         <Route path ="/" element={<Home/>}/>
         <Route path ="users" element ={<Users/>}/>
-        <Route path ="/login" element={<Login/>}/>
+        <Route path ="profile" element ={<Profile/>}/>
+        {/* <Route path ="/login" element={<Login/>}/> */}
         <Route path ="/update" element={<UpdateProfile/>}/>
         <Route path ="/sign-up" element={<SignUp/>}/>
         <Route path ="/logout" element={<Logout/>}/>

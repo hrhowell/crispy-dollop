@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "../../Navbar";
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 import { HamburgerIng } from '../RecApiCalls/HamburgerApi';
 import { RecipeButton } from '../../buttons/RecipeButton';
 
@@ -9,6 +9,8 @@ function Hamburger (){
     <>
     <Navbar/>
     <img src="images/hamburger.jpg"/>
+    <br/>
+    <br/>
     <HamburgerIng/>
     <RecipeButton/>
     </>

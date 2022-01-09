@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from './Button';
+import { Button } from '../buttons/Button';
 import './VideoSection.css';
-import '../App.css';
+import '../../App.css';
 
 function VideoSection() {
     return (

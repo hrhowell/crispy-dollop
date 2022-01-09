@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "../../Navbar";
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 import {CeleryIng} from '../RecApiCalls/CeleryApi';
 import { RecipeButton } from '../../buttons/RecipeButton';
 
@@ -10,6 +10,8 @@ function CeleryBoat (){
     
     <Navbar/>
     <img src="images/celery.jpg"/>
+    <br/>
+    <br/>
     <CeleryIng/>
     <RecipeButton/>
     </>

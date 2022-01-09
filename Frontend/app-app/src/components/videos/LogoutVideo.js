@@ -1,7 +1,7 @@
 import React from 'react';
-import {ButtonVideo} from './ButtonVideo'
-import './Logout.css';
-import '../App.css';
+import {ButtonVideo} from '../buttons/ButtonVideo';
+import '../pages/utilpages/Login';
+import '../../App.css';
 
 function LogoutVideo() {
     return (

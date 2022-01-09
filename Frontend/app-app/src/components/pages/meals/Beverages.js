@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../Navbar';
-import BeveragesCards from '../../BeveragesCards';
+import BeveragesCards from '../../cards/BeveragesCards';
 
 function Beverages() {
     return (

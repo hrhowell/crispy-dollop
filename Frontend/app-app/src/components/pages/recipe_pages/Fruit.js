@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "../../Navbar";
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 import { FruitIng } from '../RecApiCalls/FruitApi';
 import { RecipeButton } from '../../buttons/RecipeButton';
 
@@ -9,6 +9,8 @@ function Fruit (){
     <>
     <Navbar/>
     <img src="images/fruit.jpg"/>
+    <br/>
+    <br/>
     <FruitIng/> 
     <RecipeButton/>
     </>

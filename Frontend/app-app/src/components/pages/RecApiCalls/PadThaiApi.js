@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useState, useEffect, useCallback}from "react"
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 
 
 export const PadThaiIng = ()=> {
@@ -11,7 +11,7 @@ export const PadThaiIng = ()=> {
 
     const fetchPadThaiIng = ()=>{
         var recipe ="pad_thai";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.get(`http://localhost:9090/api/v1/ingredients/recipes/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setPadThaiIng(res.data);
         });

@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "../../Navbar";
-import '../../UserProfiles.css';
+import '../utilpages/UserProfiles.css';
 import { PastaIng } from '../RecApiCalls/PastaApi';
 import { RecipeButton } from '../../buttons/RecipeButton';
 
@@ -9,6 +9,8 @@ function Pasta (){
     <>
     <Navbar/>
     <img src="images/pasta.jpg"/>
+    <br/>
+    <br/>
     <PastaIng/>
     <RecipeButton/>
     </>

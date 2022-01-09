@@ -1,37 +1,31 @@
 import axios from "axios";
-import React, {useState, useEffect, useCallback}from "react";
-import {useDropzone} from 'react-dropzone';
-import './UserProfiles.css';
+import React, {useState, useEffect, useCallback}from "react"
+import '../utilpages/UserProfiles.css';
 
-
-export const UserProfiles = ()=> {
+export const Profile = ()=> {
 
    
 
-    const [userProfiles, setUserProfiles] = useState([]);
+    const [user, setUser] = useState([]);
 
-    const fetchUserProfiles = ()=>{
-        axios.get("http://localhost:9090/api/v1/users").then(res =>{ //http://3.14.3.79:9090/api/v1/users
+    const fetchUser= ()=>{
+        var user = {sessiondata}
+        axios.get(`http://localhost:9090/api/v1/ingredients/recipes/${user}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
-            setUserProfiles(res.data);
+            setUser(res.data);
         });
         
 
     }
 
     useEffect(()=>{
-        fetchUserProfiles();
+        fetchUser();
     }, [] );
 
-    return userProfiles.map((user, index) =>{
+    return user.map((ingredient, index) =>{
         return (
             <div key={index}>
-                {user.userID ? (
-                    <img 
-                        src={`http://localhost:9090/api/v1/users/${user.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
-                    />
-                ):null}
-               <br/>
+              <br/>
                <br/>
                 <h1>{user.firstname} {user.lastname}</h1>
                 <p>User ID: {user.userID}</p>
@@ -39,6 +33,7 @@ export const UserProfiles = ()=> {
                 <p>Favorite Recipe: {user.fav_rec}</p>
                 <Dropzone {...user}/>
                 <br/>
+               
             </div>
         )
     }); 

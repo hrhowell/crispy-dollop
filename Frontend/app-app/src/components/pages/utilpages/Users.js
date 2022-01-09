@@ -1,5 +1,6 @@
 import Navbar from "../../Navbar"
-import { UserProfiles } from "./pages/UserProfiles"
+import { UserProfiles } from './UserProfiles';
+import './UserProfiles.css';
 
 function Users(){
 

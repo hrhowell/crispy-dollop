@@ -15,7 +15,7 @@ import com.p2.recApp.users.User;
 import com.p2.recApp.users.UserService;
 
 @RestController
-@RequestMapping("/api/v1/recipes")
+@RequestMapping("/api/v1/ingredients/recipes")
 @CrossOrigin("*")
 public class IngredientController {
 	
@@ -50,7 +50,7 @@ public class IngredientController {
 		return ingredientService.getAllIng();
 	}
 	
-	@GetMapping("/ingredients/{recipe}")
+	@GetMapping("/{recipe}")
 	public List<Ingredient> getByRec(@PathVariable("recipe") String recipe){
 		return ingredientService.getByRec(recipe);
 	}

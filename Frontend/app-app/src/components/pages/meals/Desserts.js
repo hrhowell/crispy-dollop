@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../../Navbar';
 import '../../../App.css';
-import DessertsCards from '../../DessertsCards';
+import DessertsCards from '../../cards/DinnerCards';
 
 function Desserts() {
     return (

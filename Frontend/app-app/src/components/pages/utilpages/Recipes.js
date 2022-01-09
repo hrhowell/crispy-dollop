@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../Navbar';
-import Cards from '../Cards';
-import '../../App.css';
+import Navbar from '../../Navbar';
+import Cards from '../../cards/Cards';
+import '../../../App.css';
 
 function Recipes() {
     return (

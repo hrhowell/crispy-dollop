@@ -1,7 +1,9 @@
 import React, {useState, useEffect}from 'react';
 import {Link} from 'react-router-dom';
 import './Navbar.css';
-import {Button} from './Button';
+import {Button} from './buttons/Button';
+
+
 /**********************************Works Cited************************************
  * Title: React Website Tutorial - Beginner React JS Project Fully Responsive
  * Author: Brian Design 
@@ -54,7 +56,12 @@ export function Navbar() {
                     </li>
                     <li className='nav-item'>
                         <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
-                            Profile
+                            All Users
+                        </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+                           Profile
                         </Link>
                     </li>
                     <li className='nav-item'>
@@ -72,6 +79,7 @@ export function Navbar() {
                            Logout
                         </Link>
                     </li>
+                    
                 </ul>
                 {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
             </div>
