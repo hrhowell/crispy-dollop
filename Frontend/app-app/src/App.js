@@ -11,6 +11,7 @@ import UpdateProfile from './components/pages/UtilPages/Profile/UpdateProfile';
 import PasswordRecovery from './components/pages/UtilPages/Pass/PasswordRecovery';
 import Profile from './components/pages/UtilPages/Profile/Profile';
 import AddRecipes from './components/pages/UtilPages/AddRecipes/AddRecipes';
+import UserRecipes from './components/pages/UtilPages/UserRecipes/UserRecipes';
 
 //MealTypes
 import Desserts from './components/pages/meals/Desserts';
@@ -69,6 +70,7 @@ function App() {
         <Route path ="/profile" element ={<Profile/>}/>
         <Route path ="/login" element={<Login/>}/>
         <Route path ="/addRecipes" element={<AddRecipes/>}/>
+        <Route path ="/userRecipes" element={<UserRecipes/>}/>
         <Route path ="/update" element={<UpdateProfile/>}/>
         <Route path ="/sign-up" element={<SignUp/>}/>
         <Route path ="/logout" element={<Logout/>}/>

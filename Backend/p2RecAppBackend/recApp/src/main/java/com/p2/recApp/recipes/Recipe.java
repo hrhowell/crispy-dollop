@@ -134,6 +134,18 @@ public class Recipe {
 		this.ing5 = ing5;
 		this.status = status;
 	}
+	public Recipe(String recName, String mealType, String ing1, String ing2, String ing3, String ing4,
+			String ing5) {
+		super();
+		this.recName = recName;
+		this.mealType = mealType;
+		this.ing1 = ing1;
+		this.ing2 = ing2;
+		this.ing3 = ing3;
+		this.ing4 = ing4;
+		this.ing5 = ing5;
+		
+	}
 
 	public Recipe() {
 		super();

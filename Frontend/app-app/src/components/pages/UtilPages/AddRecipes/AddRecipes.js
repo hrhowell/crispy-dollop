@@ -32,7 +32,7 @@ export default function AddRecipes() {
      const e = thirdIngredient
      const f = fourthIngredient
      const g = fifthIngredient
-      axios.post(`http://localhost:9090/users/signup/${a}/${b}/${c}/${d}/${e}/${f}/${g}`)
+      axios.post(`http://localhost:9090/api/v1/recipes/users/add/${a}/${b}/${c}/${d}/${e}/${f}/${g}`)
         .then(response =>{
           if(response.data ==="ok" ) { navigate("/recipes");}
 
@@ -66,19 +66,19 @@ export default function AddRecipes() {
                   </div>
                   <div className="forth-input">
                     <p>Second Ingredient</p>
-                    <input id="signupinput" type="password" placeholder="Enter second ingredient" className="addRecipeInput" onChange={e => setSecondIngredient(e.target.value)}/>
+                    <input id="signupinput" type="text" placeholder="Enter second ingredient" className="addRecipeInput" onChange={e => setSecondIngredient(e.target.value)}/>
                   </div>
                   <div className="fith-input">
                     <p>Third Ingredient</p>
-                    <input id="signupinput" type="password" placeholder="Enter third ingredient" className="addRecipeInput" onChange={e => setThirdIngredient(e.target.value)}/>
+                    <input id="signupinput" type="text" placeholder="Enter third ingredient" className="addRecipeInput" onChange={e => setThirdIngredient(e.target.value)}/>
                   </div>
                   <div className="fith-input">
                     <p>Fourth Ingredient</p>
-                    <input id="signupinput" type="password" placeholder="Enter fourth ingredient" className="addRecipeInput" onChange={e => setFourthIngredient(e.target.value)}/>
+                    <input id="signupinput" type="text" placeholder="Enter fourth ingredient" className="addRecipeInput" onChange={e => setFourthIngredient(e.target.value)}/>
                   </div>
                   <div className="fith-input">
                     <p>Fifth Ingredient</p>
-                    <input id="signupinput" type="password" placeholder="Enter fifth ingredient" className="addRecipeInput" onChange={e => setFifthIngredient(e.target.value)}/>
+                    <input id="signupinput" type="text" placeholder="Enter fifth ingredient" className="addRecipeInput" onChange={e => setFifthIngredient(e.target.value)}/>
                   </div>
                  </div>
                   <div className="login-button2">

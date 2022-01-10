@@ -29,6 +29,12 @@ export default function Login() {
        
 
   }
+  localStorage.setItem('username','uname');
+  localStorage.setItem('password',upassword);
+  console.log(localStorage.getItem('username'));
+  sessionStorage.setItem('username',uname);
+  sessionStorage.setItem('password','upassword')
+  console.log(sessionStorage.getItem('username'));
     return(
         <>
           <Navbar/>

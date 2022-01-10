@@ -39,15 +39,20 @@ public class RecipeController {
 //	}
 	
 
-	@PostMapping("/add")
+	@PostMapping("/add/{recName}/{mealType}/{ing1}/{ing2}/{ing3}/{ing4}/{ing5}")
 	public String addRecipe(
-
-			@RequestBody Recipe recipe) {
-
-		System.out.println("pending"+ recipe);
-		recipe.setStatus("pending");
-		System.out.println("pending"+ recipe);
-		recipeRepository.save(recipe);
+			@PathVariable String recName,
+			@PathVariable String mealType,
+			@PathVariable String ing1,
+			@PathVariable String ing2,
+			@PathVariable String ing3,
+			@PathVariable String ing4,
+			@PathVariable String ing5) {
+		
+		Recipe newRecipe = new Recipe(recName, mealType, ing1, ing2, ing3, ing4, ing5);
+		newRecipe.setStatus("pending");
+		System.out.println("pending *************"+ newRecipe);
+		recipeRepository.save(newRecipe);
 
 		 return "I did it";
 	}

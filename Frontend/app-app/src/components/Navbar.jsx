@@ -82,6 +82,11 @@ export function Navbar() {
                            Logout
                         </Link>
                     </li>
+                    <li className='nav-item'>
+                        <Link to='/userRecipes' className='nav-links' onClick={closeMobileMenu}>
+                        User Recipes
+                        </Link>
+                    </li>
                     {/* <li className='nav-item'>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
