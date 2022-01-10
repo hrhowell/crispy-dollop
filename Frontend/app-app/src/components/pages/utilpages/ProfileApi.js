@@ -14,9 +14,10 @@ import '../utilpages/UserProfiles.css';
 export const ProfileConst = ()=> {
    
     const [userProfile, setUserProfile] = useState([]);
+    var userID = sessionStorage.getItem("userID");
 
     const fetchUserProfile= ()=>{
-        var userID =  "1";
+       
         axios.get(`http://localhost:9090/api/v1/users/${userID}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setUserProfile(res.data);
@@ -30,8 +31,6 @@ console.log(userProfile);
 
     return( 
         <>
-      
-           
            <div key={userProfile.userID}>
            {userProfile.userID ? (
                <img 

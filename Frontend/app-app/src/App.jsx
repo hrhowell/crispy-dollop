@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //Utilities
 import Users from './components/pages/utilpages/Users';
 import Home  from './components/pages/utilpages/Home';
-// import Login from './components/pages/utilpages/Login';
+import Login from './components/pages/utilpages/Login';
 import Logout from './components/pages/utilpages/Logout';
 import SignUp from './components/pages/utilpages/SignUp';
 import UpdateProfile from './components/pages/utilpages/UpdateProfile';
@@ -64,7 +64,7 @@ function App() {
         <Route path ="/" element={<Home/>}/>
         <Route path ="users" element ={<Users/>}/>
         <Route path ="profile" element ={<Profile/>}/>
-        {/* <Route path ="/login" element={<Login/>}/> */}
+        <Route path ="/login" element={<Login/>}/>
         <Route path ="/update" element={<UpdateProfile/>}/>
         <Route path ="/sign-up" element={<SignUp/>}/>
         <Route path ="/logout" element={<Logout/>}/>

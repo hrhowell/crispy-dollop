@@ -251,4 +251,8 @@ public class User /*implements UserDetails*/{
 		this.userRole = userRole;
 	}
 
+	public User(String firstname, String lastname, String email, String username, String password) {
+		
+	}
+
 }

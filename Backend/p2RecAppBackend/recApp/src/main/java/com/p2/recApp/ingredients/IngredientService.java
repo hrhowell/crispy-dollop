@@ -70,6 +70,7 @@ public class IngredientService {
 	public List<Ingredient> getByRec(String recipe) {
 		return ingredientRepository.findByRecipe(recipe);
 	}
+	
 	public Optional<Ingredient> getByMealType(){
 		return ingredientRepository.findByMealType(mealType);
 		

@@ -7,6 +7,7 @@ import './UserProfiles.css';
 export const PendingRecipes = ()=> {
 
     const [userRecipes, setUserRecipes] = useState([]);
+    const [recipe, setRecipe] = useState([]);
 
     const fetchUserRecipes = ()=>{
         axios.get("http://localhost:9090/api/v1/recipes/users/pending").then(res =>{ //http://3.14.3.79:9090/api/v1/users
@@ -21,7 +22,12 @@ export const PendingRecipes = ()=> {
         fetchUserRecipes();
     }, [] );
 
-    Approve();{
+    Approve =()=>{
+         
+        axios.post(`http://localhost:9090/api/v1/recipes/users/admin-approve/${recipe}`).then(res =>{ //http://3.14.3.79:9090/api/v1/users
+            console.log(res);
+           
+        });
 
     };
 
@@ -36,12 +42,13 @@ export const PendingRecipes = ()=> {
                <br/>
                <br/>
                 <h1>{recipe.recName}</h1>
+                <p>Recipe ID: {recipe.recID}</p>
                 <p>Ingredient 1: {recipe.ing1}</p>
                 <p>Ingredient 2: {recipe.ing2}</p>
                 <p>Ingredient 3: {recipe.ing3}</p>
                 <p>Ingredient 4: {recipe.ing4}</p>
                 <p>Ingredient 5: {recipe.ing5}</p>
-                <button onclick={Approve()}>Approve Recipe</button>
+                <button type='button' onclick={setRecipe(recipe), Approve()}>Approve Recipe</button>
                 
                 {/* <Dropzone {...user}/> */}
                 <br/>

@@ -72,6 +72,15 @@ public class UserService/* implements UserDetailsService*/ {
 		return "user added!";
 	}
 	
+	 public User userLogin(String username, String password) {
+	        User loggedInUser = userRepository.findByUsername(username);    
+	        if(loggedInUser.getPassword().equals(password)) {
+	            return loggedInUser;
+	        }else {
+	            return null;
+	        }
+	    }
+	
 	public String updateUser(User user) {
 		
 		boolean userExists = userRepository.findByEmail(user.getEmail()).isPresent();
