@@ -53,6 +53,14 @@ public class UserController {
 		
 	}
 	
+	@GetMapping("/{username}")
+	public User getUserByUsername(@PathVariable("username") String username){
+		return userService.getByUsername(username);
+		
+		//do the request body thing
+		
+	}
+	
 	//this throws an error with the conversion of json to an integer, but doesn't crash the program 
 	@PostMapping(
 			path = "{userID}/image/upload",

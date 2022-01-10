@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.p2.recApp.bucket.BucketName;
 import com.p2.recApp.filestore.FileStore;
+import com.p2.recApp.ingredients.Ingredient;
 
 import lombok.AllArgsConstructor;
 /*************************************Works Cited*********************************************
@@ -113,6 +114,10 @@ public class UserService/* implements UserDetailsService*/ {
 		Integer userID = user.getUserID();
 		return userRepository.getById(userID);
 		
+	}
+	
+	User getByUsername(String username) {
+		return userRepository.findByUsername(username);
 	}
 
 	void uploadUserProfileImage(Integer userID, MultipartFile file) {
