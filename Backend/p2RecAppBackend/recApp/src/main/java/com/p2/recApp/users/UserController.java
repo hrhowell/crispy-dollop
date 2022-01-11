@@ -68,7 +68,7 @@ public class UserController {
 	
 	 @RequestMapping(method=RequestMethod.POST, value="{userID}")
 	 public void updateUser(@RequestBody User user, @PathVariable int userID) {
-		 userService.updateUser(userID, user);
+//		 userService.updateUser(userID, user);
 	 }
 	
 }

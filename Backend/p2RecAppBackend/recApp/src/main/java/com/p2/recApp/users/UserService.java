@@ -222,16 +222,16 @@ public class UserService/* implements UserDetailsService*/ {
 		        return userRepository.enableUser(email);
 		    }
 
-			public void updateUser(Integer userID, User user) {
-				for(int i=0; i< user.size(); i++) {
-					User u = user.get(i);
-					if (u.getUserID().equals(userID)) {
-						user.set(i,user);
-						return;					
-					}
-				}
-				
-			}
+//			public void updateUser(Integer userID, User user) {
+//				for(int i=0; i< user.size(); i++) {
+//					User u = user.get(i);
+//					if (u.getUserID().equals(userID)) {
+//						user.set(i,user);
+//						return;					
+//					}
+//				}
+//				
+//			}
 
 
 	

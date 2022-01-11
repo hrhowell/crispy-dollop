@@ -1,4 +1,4 @@
-//package com.p2.recApp.registration;
+package com.p2.recApp.registration;
 //
 //import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@
 //@RequestMapping(path = "/registration")
 //@AllArgsConstructor
 //
-//public class ResgistrationController {
+public class ResgistrationController {
 //	
 //	private RegistrationService registrationService;
 //	
@@ -24,4 +24,4 @@
 ////    }
 //	
 //
-//}
+}
