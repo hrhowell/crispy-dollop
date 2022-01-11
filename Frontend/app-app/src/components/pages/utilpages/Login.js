@@ -22,6 +22,8 @@ function Login() {
   const [password, setPassword ] = useState("");
   const [userRole, setUserRole] = useState(""); 
 
+
+
   // const [user, setUser] = useState({
   //   userID: '',
   //   firstname: '',
@@ -37,27 +39,30 @@ function Login() {
 
   const handleUsername =(e)=> setUsername(e.target.value);
   const handlePassword =(e)=>setPassword(e.target.value);
-  
+ 
+
   function submit(){
     axios.post(`http://localhost:9090/api/v1/users/login/login`,{
      
     }).then(response => {
-      // setUsername();
-      SessionDataStorage();
+      SessionDataStorage(username);
       console.log(username, password);
       console.log("Response First Axios:"+ response);
             
     }).catch(err => console.log("Error occured", err))
 
-    const SessionDataStorage = () => {
-      sessionStorage.setItem("userID", userID);
-      sessionStorage.setItem("firstName", firstname);
-      sessionStorage.setItem("lastName", lastname);
-      sessionStorage.setItem("username", username);
-      sessionStorage.setItem("password", password);   
-      sessionStorage.setItem("userRole", userRole);
-    };
+   
   }
+
+  
+  const SessionDataStorage = () => {
+    sessionStorage.setItem("userID", userID);
+    sessionStorage.setItem("firstName", firstname);
+    sessionStorage.setItem("lastName", lastname);
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("password", password);   
+    sessionStorage.setItem("userRole", userRole);
+  };
 
   console.log(username);
 
@@ -68,7 +73,7 @@ function Login() {
         <form>
           <input type="text" placeholder="Enter your username" value={username} onChange={handleUsername} />
           <input type="password" placeholder="Enter your password" className="password" value={password} onChange={handlePassword}/>
-          <button type="submit" onClick={submit}>Login</button>
+          <button type="button" onClick={submit}>Login</button>
           <a className="loga" href="/passwordrecovery">Forgot Password ?</a> Or <a className="loga" href="/sign-up">Sign Up</a>
         </form>
       </div>

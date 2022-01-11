@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //Utilities
 import Users from './components/pages/utilpages/Users';
 import Home  from './components/pages/utilpages/Home';
-import Login from './components/pages/utilpages/Login';
+import Login from './components/pages/utilpages/NewLogin1';
 import Logout from './components/pages/utilpages/Logout';
 import SignUp from './components/pages/utilpages/SignUp';
 import UpdateProfile from './components/pages/utilpages/UpdateProfile';

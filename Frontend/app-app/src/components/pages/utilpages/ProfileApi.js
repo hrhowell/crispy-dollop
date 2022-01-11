@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect, useCallback}from "react";
 import {useDropzone} from 'react-dropzone';
 import '../utilpages/UserProfiles.css';
+import {getSessionStorageOrDefault} from '../utilpages/useSessionStorage';
 
 /**********************************WorksCited******************************************
  * Title: NA
@@ -12,13 +13,14 @@ import '../utilpages/UserProfiles.css';
  **************************************************************************************/
 
 export const ProfileConst = ()=> {
-   
-    const [userProfile, setUserProfile] = useState([]);
-    var userID = sessionStorage.getItem("userID");
+    var username = getSessionStorageOrDefault.username;
 
+    const [userProfile, setUserProfile] = useState([]);
+    // var userID = sessionStorage.getItem("userID");
+    
     const fetchUserProfile= ()=>{
        
-        axios.get(`http://localhost:9090/api/v1/users/${userID}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.get(`http://localhost:9090/api/v1/users/${username}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setUserProfile(res.data);
         });
