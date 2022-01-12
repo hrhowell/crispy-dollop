@@ -1,0 +1,112 @@
+/**********************************Works Cited************************************
+ * Title: React Website Tutorial - Beginner React JS Project Fully Responsive
+ * Author: Brian Design 
+ * Date: 8/11/20 (Accessed 1/1/22)
+ * Code Version: React
+ * Availability: https://youtu.be/I2UBjN5ER4s
+ *********************************************************************************/
+ #main-re{
+    /* margin-left: 30px;  */
+    /* background-image: url('images/greenBack.jpg'); */
+   }
+   /* #h1{
+     margin-top: 20px;
+     margin-bottom: 40px;
+     font-size: 65px;
+     font-family: 'Moon Dance', cursive; 
+     /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  /* } */
+   /* .ui_search{
+     margin-bottom:40px ;
+     white-space: 300px;
+     height: 50px;
+  
+   } */
+   /* .ui_icon_input{
+     border-top: 30px;
+   } */
+   #submain16{
+     background-image: url('../images/latte.jpg'); 
+
+   }
+   #submain26{
+    background-image: url('../images/orange_juice.jpg'); 
+
+  }
+  #submain36{
+    background-image: url('../pages/images/row_boba.jpg'); 
+
+  }
+  #submain46{
+    background-image: url('../images/punch.jpg'); 
+
+  }
+  #submain56{
+    background-image: url('../images/newSn1.jpg'); 
+
+  }
+  #submain66{
+    background-image: url('../images/drink.jpg'); 
+
+  }
+   #bottom{
+    padding-left: 10px;
+    padding-right: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color:white;
+    color: black;
+    font-family: 'Moon Dance', cursive; 
+    font-size: 40px;
+   }
+   #pdiv{
+     margin-top:10px ;
+     margin-bottom: 40px;
+     /* margin-left: 100px; */
+     background-color:rgb(180, 177, 177)
+     ;
+     
+   }
+  #h2p{
+    /* font-family: 'Moon Dance', cursive;  */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    /* font-weight: 700; */
+  }
+   #bigDiv1{
+     float:left;
+     margin-left: 120px;
+     margin-right: 100px;  
+   }
+   #bigDiv2{
+    float:left;
+    margin-left: 65px;
+  }
+  #bigDiv3{
+    float:left;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  #bigDiv4{
+    float:left;
+    margin-left: 65px;
+  }
+  #bigDiv5{
+    float:left;
+    margin-left: 120px;
+    margin-right: 100px;
+  }
+  #bigDiv6{
+    float:left;
+    margin-left: 65px;
+  }
+  
+  .hov:hover{
+    transition:0.6s ease-in-out;
+    transform: scale(1.2);
+    /* z-index: 99; */
+  }
+  
+  
+   
