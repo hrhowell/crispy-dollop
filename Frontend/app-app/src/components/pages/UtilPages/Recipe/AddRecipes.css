@@ -1,0 +1,94 @@
+.main22 {
+    justify-content: center;
+    display: flex; 
+    padding-top: 30px;
+    padding-bottom: 90px;
+    background-image: url("../../images/pexels-homegroundsco-5200286.jpg"); 
+    background-size: cover;
+  }
+  .sub-main22 {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 810px;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    top:50%;
+    left:50%;
+    /* padding-top: 10px; */
+    border-radius: 60px; 
+    /*box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);*/
+  
+  } 
+  #t22{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 60px;
+    margin-bottom: 30px;
+
+  }
+  .form{
+    margin-left:-30px;
+  }
+  p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 20px; 
+    
+  }
+  #signupinput{
+    width: 100%;
+    margin-bottom: 10px;
+  
+  }
+  #signupinput[type="text"], input[type="password"]{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline:none;
+    height: 40px;
+   
+    color:#fff;
+    font-size: 16px;
+   text-align: left;
+  } 
+  #button2{
+    width: 180px;
+    height: 45px;
+    border-radius: 60px;
+    background-color:gray;
+    color: white;
+    font-size: 25px;
+    border: none;
+    outline:none;
+    
+  }
+  .login-button2{
+    /* padding-top: 25px; */
+    margin-left: 25px;
+    margin-bottom: 10px;
+    /* padding-top: 30px; */
+    padding-bottom: 20px;
+  
+  }
+  #button2:hover{
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+  }
+  
+  .link{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a:hover{
+    color: #39dc79;
+  }

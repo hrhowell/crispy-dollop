@@ -1,0 +1,24 @@
+#mainh1{
+    
+    
+}
+#maindiv{
+background-image: url("../../../../../public/images/thymecrunchlogo\ \(1\).jpg");
+background-position: fixed;
+background-repeat:repeat-y;
+background-size: 14%;
+
+  
+}
+
+
+h3{
+    float:none;
+    margin-left: 30%;
+    text-align: left;
+    background-color: rgba(2, 66, 41, 0.568);
+    width: 610px;
+    border-radius: 0px 0px 0px 0px;
+
+}
+

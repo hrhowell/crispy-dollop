@@ -1,0 +1,73 @@
+
+#pendingId{
+  background-image: url("../../../../../public/images/thymecrunchlogo\ \(1\).jpg");
+  background-position: fixed;
+  background-repeat:repeat-y;
+  background-size: 14%;  
+  }
+.bigTeble{
+   
+    border-color: gray;
+    background-color: rgba(32, 34, 33, 0.568);
+    
+}
+.headerRow{
+    border-bottom: rgba(6, 24, 15, 0.904);
+    border-left: none;
+    border-right: none;
+    border-color: gray;
+    border-radius: 25%;
+    background-color: rgba(6, 26, 16, 0.884);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.headerCol{
+    /* border: solid; */
+    border-color: gray;
+    padding: 15px 15px;
+    background-color: rgba(27, 73, 50, 0.432);
+    border-radius: 50%;
+}
+.bodyRow{
+  /* border: solid; */
+  border-color: gray;
+}
+.bodyCol{
+  /* border: solid; */
+  border-color: gray;
+  padding: 15px 15px;
+}
+#left{
+  position: relative;
+  
+}
+#pendingId{
+  margin-left: 60px;
+  margin-top: 40px;
+  /* width: 5px; */
+}
+.pendingInput{
+margin-top: 10px;
+font-size: 18px;
+background-color: rgba(68, 60, 60, 0.425);
+}
+#recIdPending{
+  padding-left: 10px;
+  margin-left: 10px;
+  color:white;
+  width:8%
+
+}
+#status{
+  padding-left: 10px;
+  margin-right: 10px;
+  color:white;
+  width: 10%
+}
+
+#statusButton{
+  color:white;
+  background-color:rgb(19, 58, 37) ;
+  border-radius: 25%;
+}
