@@ -1,13 +1,40 @@
 body {
-  margin: 0;
+  
+  
+
+  margin-top: 0px;
+  /* font-family: 'Moon Dance', cursive; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("./components/images/teambackground.jpg");  */
+
+  /* background-image: url("./components/images/pexels-anna-nekrashevich-7214933.jpg");  */
+  /* background-image: url("./components/images/pexels-ioana-motoc-4346328.jpg");   */
+
+  background-size: cover !important;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(235, 170, 185, 0.582);
+
+  /* background-color: rgb(148, 212, 172); */
+  /* background-color: rgb(245, 216, 239); */
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+   
+
+    
+    
 }
+
+/* new css */
+/* :root{
+  --bg:#242526;
+
+} */

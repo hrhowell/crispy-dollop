@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {GranolaIng} from '../RecApiCalls/GranolaApi';
-import { BreakfastButton } from "../../buttons/BreakfastButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Granola (){
     return(
@@ -18,13 +18,8 @@ function Granola (){
     <hr/>
     </div>
     <GranolaIng/>
-    <br/>
-    <BreakfastButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

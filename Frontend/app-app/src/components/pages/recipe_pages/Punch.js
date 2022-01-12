@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { PunchIng } from '../RecApiCalls/PunchApi';
-import { BeveragesButton } from "../../buttons/BeveragesButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Punch (){
     return(
@@ -18,15 +18,9 @@ function Punch (){
     <hr/>
     </div>
     <PunchIng/>
-    <br/>
-    <BeveragesButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
-    
     </>
     )
         

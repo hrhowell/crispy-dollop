@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { HummusIng } from '../RecApiCalls/HummusApi';
-import { SnackButton } from "../../buttons/SnackButton"
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Hummus (){
     return(
@@ -18,15 +18,8 @@ function Hummus (){
     <hr/>
     </div>
     <HummusIng/>
-    <br/>
-    <SnackButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

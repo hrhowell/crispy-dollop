@@ -3,8 +3,8 @@ import React, {useState, useEffect, useCallback}from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { PavlovaIng } from '../RecApiCalls/PavolvaApi';
-import { DessertButton } from "../../buttons/DessertButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Pavlova (){
     return(
@@ -19,15 +19,8 @@ function Pavlova (){
     <hr/>
     </div>
     <PavlovaIng/>
-    <br/>
-    <DessertButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

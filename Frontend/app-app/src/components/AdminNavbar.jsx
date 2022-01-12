@@ -43,10 +43,15 @@ export function FirstNavbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 
+                <Link to= "/" className='navbarLogo'>
+                    <img id="ourlogo" src={require('.//images/thymecrunchlogowhite.jpg')}
+                    alt='logo' />
+                </Link>
+
+                <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                  Hi, {userName} 
+                </Link>
                 
-                 <Link to="/" id='ThymeCrunch'className='navbarLogo' onClick={closeMobileMenu}>
-                  ThymeCrunch  
-                </Link> 
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"}/>
                 </div>

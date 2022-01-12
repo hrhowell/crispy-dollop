@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {ToastIng} from '../RecApiCalls/ToastApi';
-import { BreakfastButton } from "../../buttons/BreakfastButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Toast () {
     return(
@@ -18,21 +18,12 @@ function Toast () {
     <hr/>
     </div>
     <ToastIng/>
-    <br/>
-    <BreakfastButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
-    
     </>
     )
-        
-
-    
+     
 }
 
 export default Toast;

@@ -3,6 +3,8 @@ package com.p2.recApp.users;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +16,11 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -34,19 +38,20 @@ import lombok.ToString;
  *********************************************************************************************/
 //this is lombok, it generates getters and setters with annotations
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
 @ToString
-
 @Entity
 @Table(name="users")
-public class User implements UserDetails{
+public class User /*implements UserDetails*/{
 	
 //	this sets a PK on the ID, sets up a sequence and says it
 //	increases by 1 and gives it to the generated value
 	
+	
+
 	@Id
 	@SequenceGenerator(
 			name="user_sequence",
@@ -61,19 +66,25 @@ public class User implements UserDetails{
 			)
 	private Integer userID;
 	
+	private Integer userID;
+	
 	@Column(name="firstname")
 	private String firstname;
 	
-	@Column(name="lasttname")
+	@Column(name="lastname")
 	private String lastname;
 	
 	@Column(name="email")
 	private String email;
 	
 	@Column(name="username")
+	
+	@JsonProperty("username")
 	private String username;
 	
 	@Column(name="password")
+	
+	@JsonProperty("password")
 	private String password;
 	
 	//s3 key
@@ -84,13 +95,16 @@ public class User implements UserDetails{
 	
 	//this has to do with security and login in the tutorial JAVA complete backend 
 	@Column(name="locked")
-	private Boolean locked;
+	private Boolean locked = false;
 	@Column(name="enabled")
-	private Boolean enabled;
+	private Boolean enabled = false;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="userRole")
+	@Column(name="user_role")
+	//private UserRole userRole;
 	private UserRole userRole;
+	
+	
 	
 	//constructor with everything but ID
 	public User(String firstname, 
@@ -100,8 +114,6 @@ public class User implements UserDetails{
 				String password,
 				String profile_pic,
 				String fav_rec,
-				Boolean locked,
-				Boolean enabled,
 				UserRole userRole) {
 		super();
 		this.firstname = firstname;
@@ -109,64 +121,35 @@ public class User implements UserDetails{
 		this.email = email;
 		this.username = username;
 		this.password = password;
-		this.profile_pic = profile_pic;
+		this.profile_pic =profile_pic;
 		this.fav_rec = fav_rec;
-		this.locked = locked;
-		this.enabled = enabled;
 		this.userRole = userRole;
 	}
-
-	//this is just a basic role, could implement more in the future
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userRole.name());
-		return Collections.singletonList(authority);
-	}
-
-	@Override
-	public String getPassword() {
-		
-		return password;
-	}
-
-	@Override
-	public String getUsername() {
-		
-		return username;
-	}
 	
-	//this is just if the user could delete their account
-	@Override
-	public boolean isAccountNonExpired() {
-		
-		return true;
-	}
+	 public Integer getUserID() {
+	        return userID;
+	    }
 
 	
-	@Override
-	public boolean isAccountNonLocked() {
-		
-		return !locked;
+	
+
+	public Optional<String> getProfile_pic() {
+		return Optional.ofNullable(profile_pic);
 	}
 
-	//another check for the account
-	@Override
-	public boolean isCredentialsNonExpired() {
-		
-		return true;
+	public void setProfile_pic(String profile_pic) {
+		this.profile_pic = profile_pic;
 	}
+	
 
-	@Override
-	public boolean isEnabled() {
-		
-		return enabled;
-	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(email, enabled, fav_rec, firstname, lastname, locked, password, profile_pic, userID,
 				userRole, username);
 	}
+	
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -190,11 +173,131 @@ public class User implements UserDetails{
 				&& userRole == other.userRole
 				&& Objects.equals(username, other.username);
 	}
+
+	public User(String firstname, String lastname, String email, String username, String password, UserRole userRole) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.userRole = userRole;
+	}
 	
-	
-//    	********************************BUG FIXXY******************************goes to RegistrationService****************
-	public User(String firstname2, String lastname2, String email2, String username2, String password2, UserRole user) {
-		// TODO Auto-generated constructor stub
+
+	public void setUserID(Integer userID) {
+		this.userID = userID;
 	}
 
+	
+
+	public User(Integer userID, String firstname, String lastname, String email, String username, String password,
+			String profile_pic, String fav_rec, Boolean locked, Boolean enabled, UserRole userRole) {
+		super();
+		this.userID = userID;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.profile_pic = profile_pic;
+		this.fav_rec = fav_rec;
+		this.locked = locked;
+		this.enabled = enabled;
+		this.userRole = userRole;
+	}
+
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		
+		return this.email;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getFav_rec() {
+		return fav_rec;
+	}
+
+	public void setFav_rec(String fav_rec) {
+		this.fav_rec = fav_rec;
+	}
+
+	public Boolean getLocked() {
+		return locked;
+	}
+
+	public void setLocked(Boolean locked) {
+		this.locked = locked;
+	}
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+	public User(String firstname, String lastname, String email, String username, String password) {
+//		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+	}
+
+	public User() {
+		super();
+	}
+
+	public void setEmail(String email2) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }

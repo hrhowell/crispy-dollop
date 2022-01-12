@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import './SignUp.css';
 
@@ -11,6 +12,17 @@ import axios from "axios";
 
 import { useNavigate} from 'react-router-dom';
 
+=======
+import React, {useState, useEffect} from 'react';
+import './SignUp.css';
+import '../../../../App.css';
+import FirstNavbar from '../../../FirstNavbar';
+
+import axios from "axios";
+import { useNavigate} from 'react-router-dom';
+
+
+>>>>>>> 16b374932599f6a347e877736b9af4f62bb02397
 export default function SignUp() {
     const [ufirstname, setFristname] = useState('');
     const [ulastname, setLastname] = useState('');
@@ -21,6 +33,46 @@ export default function SignUp() {
     const [uData, setUData] = useState("")
     const navigate = useNavigate()
 
+<<<<<<< HEAD
+=======
+    const url =""
+
+    const [email] = useState('');
+
+    const fetchEmail = ()=>{
+        var recipe = ""
+        axios.post(`http://localhost:9090/api/v1/email/email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+            console.log(res);
+            setEmail(res.data);
+        });
+        
+
+    }
+
+    useEffect(()=>{
+        fetchEmail();
+    }, [] );
+
+    function signup(e) {
+        e.preventDefault();
+        axios.post(url, {
+            email: email.email
+        })
+            .then(res => {
+                console.log(res.data)
+            })
+    }
+
+
+    function handle(e){
+        const newdata={...email}
+        newdata[e.target.id] = e.target.value
+        setEmail(newdata)
+        console.log(newdata)
+    }
+
+
+>>>>>>> 16b374932599f6a347e877736b9af4f62bb02397
 
   function submit2(){
      const a = ufirstname
@@ -30,7 +82,11 @@ export default function SignUp() {
      const e = uupassword
       axios.post(`http://localhost:9090/users/signup/${a}/${b}/${c}/${d}/${e}`)
         .then(response =>{
+<<<<<<< HEAD
           if(response.data ==="ok" ) { navigate("/recipes");}
+=======
+          if(response.data ==="ok" ) { navigate("/signup-email-sent");}
+>>>>>>> 16b374932599f6a347e877736b9af4f62bb02397
 
         })
         .catch(err => {
@@ -43,6 +99,10 @@ export default function SignUp() {
           <div className="main2">
             <div className="sub-main2">
               <div>
+<<<<<<< HEAD
+=======
+              <form onSubmit={(e) => signup(e)}>
+>>>>>>> 16b374932599f6a347e877736b9af4f62bb02397
                 <div>
                   <div>
                   <h1 id="t2">Sign Up Page</h1>
@@ -73,6 +133,10 @@ export default function SignUp() {
                     <button id="button2" onClick={submit2}>Sign Up</button>
                   </div>
                   </div>
+<<<<<<< HEAD
+=======
+                </form>
+>>>>>>> 16b374932599f6a347e877736b9af4f62bb02397
               </div>
             </div>
             

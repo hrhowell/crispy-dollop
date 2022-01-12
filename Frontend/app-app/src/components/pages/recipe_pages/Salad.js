@@ -3,8 +3,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { SaladIng } from '../RecApiCalls/SaladApi';
-import { LunchButton } from "../../buttons/LunchButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Salad (){
     return(
@@ -21,13 +21,8 @@ function Salad (){
     </div>
     
     <SaladIng/>
-    <br/>
-    <LunchButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { LemonTartIng } from '../RecApiCalls/LemonTartApi';
-import { DessertButton } from "../../buttons/DessertButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function LemonTart (){
     return(
@@ -19,13 +19,8 @@ function LemonTart (){
     <hr/>
     </div>
     <LemonTartIng/>
-    <br/>
-    <DessertButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

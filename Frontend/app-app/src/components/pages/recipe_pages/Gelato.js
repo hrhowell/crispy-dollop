@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import  { GelatoIng } from '../RecApiCalls/GelatoApi';
-import { DessertButton } from "../../buttons/DessertButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Gelato (){
     return(
@@ -18,13 +18,8 @@ function Gelato (){
     <hr/>
     </div>
     <GelatoIng/>
-    <br/>
-    <DessertButton/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <RecipeButton/>
+    <EmailButton/>
     </div>
     </>
     )

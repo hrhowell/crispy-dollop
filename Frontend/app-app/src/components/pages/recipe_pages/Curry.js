@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {CurryIng} from '../RecApiCalls/CurryApi';
-import { LunchButton } from "../../buttons/LunchButton";
-import '../../pages/UtilPages/Recipe/UserRecipes.css'
+import { RecipeButton } from "../../buttons/RecipeButton";
+import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Curry (){
     return(
@@ -18,15 +18,8 @@ function Curry (){
     <hr/>
     </div>
      <CurryIng/> 
-     <br/>
-     <LunchButton/>  
-     <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+     <RecipeButton/> 
+     <EmailButton/>
      </div>
     </>
     )

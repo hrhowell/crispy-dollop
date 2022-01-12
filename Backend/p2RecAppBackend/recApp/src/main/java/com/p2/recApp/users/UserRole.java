@@ -8,6 +8,7 @@ package com.p2.recApp.users;
  *********************************************************************************************/
 
 public enum UserRole {
-
-	USER
+	USER,
+	ADMIN
+	
 }

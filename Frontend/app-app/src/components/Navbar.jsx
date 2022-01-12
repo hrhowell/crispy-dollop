@@ -1,7 +1,12 @@
 import React, {useState, useEffect}from 'react';
 import {Link} from 'react-router-dom';
 import './Navbar.css';
-import {Button} from './Button';
+import {Button} from './buttons/Button';
+import AddRecipes from './pages/UtilPages/Recipe/AddRecipes';
+import PendingRecipes from './pages/UtilPages/Recipe/PendingRec';
+import RecipesMenu from './pages/UtilPages/Recipe/UserRecipesMenu';
+import UserRecipes from './pages/UtilPages/Recipe/UserRecipes';
+
 /**********************************Works Cited************************************
  * Title: React Website Tutorial - Beginner React JS Project Fully Responsive
  * Author: Brian Design 
@@ -32,16 +37,26 @@ export function Navbar() {
 
     window.addEventListener('resize', showButton);
 
+    const userName = sessionStorage.getItem('name')
+    const string = '  ';
+
 
     return (
         <>
         <nav className="navbar">
             <div className="navbar-container">
-                
-                {/* this is for a logo to return home, but this breaks the program atm */}
-                 {/* <link to="/" className='navbarLogo' onClick={closeMobileMenu}>
-                  ThymeCrunch  
-                </link> */}
+               
+                <Link to= "/" className='navbarLogo'>
+                    <img id="ourlogo" src={require('.//images/thymecrunchlogowhite.jpg')}
+                    alt='logo' />
+                </Link>
+                 {/* <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                  ThymeCrunch 
+                </Link> */}
+                {/* <span> Hi, {userName}</span> */}
+                {/* <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                  Hi, {userName} 
+                </Link> */}
                 
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"}/>
@@ -54,27 +69,49 @@ export function Navbar() {
                     </li>
                     <li className='nav-item'>
                         <Link to='/users' className='nav-links' onClick={closeMobileMenu}>
-                            Profile
+                            All Users
                         </Link>
                     </li>
                     <li className='nav-item'>
+                        <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+                           Profile
+                        </Link>
+                    </li>
+                    {/* <li className='nav-item'>
                         <Link to='/recipes' className='nav-links' onClick={closeMobileMenu}>
                             Recipes
                         </Link>
-                    </li>
-                    <li className='nav-item'>
+                    </li> */}
+                    <div class="dropdown">
+                    <button class="dropbtn">Recipes</button>
+                    <div class="dropdown-content">
+                        <a href="/recipes">Recipe</a>
+                        <a href="/user-recipes">User Recipes</a>
+                        <a href="add-recipes">Add Recipes</a>
+                    </div>
+                    </div>
+                    {/* <li className='nav-item'>
                         <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
                            Login
                         </Link>
-                    </li>
-                    <li className='nav-item'>
+                    </li> */}
+                    {/* <li className='nav-item'>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
-                    </li>
+                    </li> */}
+                    {/* <li className='nav-item'>
+                        <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
+                            Update 
+                        </Link>
+                    </li> */}
                 </ul>
-                {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
-                {button && <Button buttonStyle='btn--outline'>Forgot PassWord?</Button>}
+                {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
+                <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                  Hi, {userName} 
+                </Link>
             </div>
         </nav>
         </>

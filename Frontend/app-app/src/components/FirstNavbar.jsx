@@ -43,9 +43,9 @@ export function FirstNavbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 
-                
-                 <Link to="/" id='ThymeCrunch'className='navbarLogo' onClick={closeMobileMenu}>
-                  ThymeCrunch  
+                <Link to= "/" className='navbarLogo'>
+                    <img id="ourlogo" src={require('.//images/thymecrunchlogowhite.jpg')}
+                    alt='logo' />
                 </Link>
                 
                 <div className="menu-icon" onClick={handleClick}>
