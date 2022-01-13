@@ -18,8 +18,15 @@ function Granola (){
     <hr/>
     </div>
     <GranolaIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

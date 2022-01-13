@@ -18,8 +18,15 @@ function Hamburger (){
     <hr/>
     </div>
     <HamburgerIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

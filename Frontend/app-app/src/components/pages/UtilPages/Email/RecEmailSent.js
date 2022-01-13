@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from'axios';
 import { Link } from 'react-router-dom';
+import Navbar from '../../../Navbar';
 
 function RecEmailSent() {
     const url =""
@@ -39,12 +40,14 @@ function RecEmailSent() {
     }
 
     return (
+        <>         
+        <Navbar/>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
             <div class="container">
                 <form onSubmit={(e) => submit(e)}>
                     <h2 id="h2">We are glad you like this recipe!</h2>
                     <br/>
-                    <h3 id="h2">Enter your email below and we will send you your recipe.</h3>
+                    <h2 id="h2">Enter your email below and we will send you your recipe.</h2>
                     <br/>
                     <label id="h2">Email:</label>
                     <input onChange={(e)=>handle(e)} id="email" value={email.email} placeholder="email" type="text" required></input>
@@ -56,6 +59,7 @@ function RecEmailSent() {
                 </form>
             </div>
         </div>
+        </>
     )
 }
 

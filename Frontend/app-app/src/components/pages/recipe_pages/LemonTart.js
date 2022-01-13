@@ -19,8 +19,15 @@ function LemonTart (){
     <hr/>
     </div>
     <LemonTartIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

@@ -18,8 +18,15 @@ function BobaTea (){
     <hr/>
     </div>
     <BobaIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

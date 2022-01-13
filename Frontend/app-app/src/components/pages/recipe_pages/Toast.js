@@ -18,8 +18,15 @@ function Toast () {
     <hr/>
     </div>
     <ToastIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

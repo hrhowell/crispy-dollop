@@ -18,8 +18,15 @@ function PadThai(){
     <hr/>
     </div>
     <PadThaiIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

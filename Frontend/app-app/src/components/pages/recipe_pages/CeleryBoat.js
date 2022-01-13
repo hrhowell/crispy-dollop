@@ -20,8 +20,15 @@ function CeleryBoat (){
     <hr/>
     </div>
     <CeleryIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

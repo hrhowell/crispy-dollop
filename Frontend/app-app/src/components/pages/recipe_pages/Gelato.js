@@ -18,8 +18,15 @@ function Gelato (){
     <hr/>
     </div>
     <GelatoIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

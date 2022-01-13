@@ -18,8 +18,14 @@ function Punch (){
     <hr/>
     </div>
     <PunchIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

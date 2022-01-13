@@ -18,8 +18,15 @@ function Hummus (){
     <hr/>
     </div>
     <HummusIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

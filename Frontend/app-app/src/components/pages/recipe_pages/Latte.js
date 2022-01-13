@@ -18,8 +18,15 @@ function Latte (){
     <hr/>
     </div>
     <LatteIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </> 
     )

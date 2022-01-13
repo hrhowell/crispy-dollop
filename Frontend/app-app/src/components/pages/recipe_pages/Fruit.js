@@ -18,8 +18,15 @@ function Fruit (){
     <hr/>
     </div>
     <FruitIng/> 
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

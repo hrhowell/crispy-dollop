@@ -19,8 +19,15 @@ function Pavlova (){
     <hr/>
     </div>
     <PavlovaIng/>
+    <br/>
     <RecipeButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

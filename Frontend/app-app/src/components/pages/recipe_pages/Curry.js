@@ -17,9 +17,16 @@ function Curry (){
     <p>Take-out has nothing on this quick and easy lunch. Spice up supper with our lucious and sunny yellow curry!</p>
     <hr/>
     </div>
-     <CurryIng/> 
+     <CurryIng/>
+     <br/>
      <RecipeButton/> 
      <EmailButton/>
+     <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
      </div>
     </>
     )
