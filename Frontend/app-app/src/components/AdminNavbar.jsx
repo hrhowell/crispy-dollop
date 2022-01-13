@@ -35,47 +35,61 @@ export function AdminNavbar() {
         }
     };
 
-    // const showUserFx = ()=>{
-    //     if(userName ==="ADMIN"){
-    //         setIsAdmin(true);
-    //         setIsLoggedIn(true);
-    //         setButton(false);
-    //         setAdm(true);
-    //         setLog(true);
-    //         const admfx = document.getElementById("adm");
-    //         const userfx = document.getElementById("log");
-    //         admfx.style.display = "visible";
-    //         userfx.style.display = "visible";
+    const first = ()=>{
+       
+            setIsLoggedIn(false);
+            setIsAdmin(false);
+            setButton(true);
+            setAdm(false);
+            setLog(false);
+            const admfx = document.getElementById("adm");
+            const userfx = document.getElementById("log");
+            admfx.style.display = "hidden";
+            userfx.style.display = "hidden";
 
-    //     }else if(userName !=null){
-    //         setIsLoggedIn(true);
-    //         setButton(false);
-    //         setLog(true);
-    //         const userfx = document.getElementById("log");
-    //         userfx.style.display = "visible";
+        
 
-    //     }else{
-    //         setIsLoggedIn(false);
-    //         setIsAdmin(false);
-    //         setButton(true);
-    //         setAdm(false);
-    //         setLog(false);
-    //         const admfx = document.getElementById("adm");
-    //         const userfx = document.getElementById("log");
-    //         admfx.style.display = "hidden";
-    //         userfx.style.display = "hidden";
+    }
 
-    //     }
-    // }
+    const showUserFx = ()=>{
+        if(userName ==="ADMIN"){
+            setIsAdmin(true);
+            setIsLoggedIn(true);
+            setButton(false);
+            setAdm(true);
+            setLog(true);
+            const admfx = document.getElementById("adm");
+            const userfx = document.getElementById("log");
+            admfx.style.display = "visible";
+            userfx.style.display = "visible";
+
+        }else if(userName !=null){
+            setIsLoggedIn(true);
+            setButton(false);
+            setLog(true);
+            const userfx = document.getElementById("log");
+            userfx.style.display = "visible";
+
+        }
+    }
 
     
     useEffect(()=> {
         showButton();
     },[]);
 
+    useEffect(()=>{
+        showUserFx();
+    },[]);
+
+    useEffect(()=> {
+        first();
+    },[]);
+
     window.addEventListener('resize', showButton);
-    // window.addEventListener('storage', showUserFx);
-    const userName = sessionStorage.getItem('name')
+    window.addEventListener('storage', showUserFx);
+    window.addEventListener('load', first);
+    const userName = sessionStorage.getItem('name');
 
     return (
         <>
@@ -101,19 +115,19 @@ export function AdminNavbar() {
                         </Link>
                     </li>
 
-                    <li id="log" className='nav-item'>
+                    <li id="log" className='nav-item'onLoad={first}>
                         <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
                            Profile
                         </Link>
                     </li>
 
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <Link to='/recipes' className='nav-links' onClick={closeMobileMenu}>
                             Recipes
                         </Link>
-                    </li>
+                    </li> */}
 
-                    <div id="log" class="dropdown">
+                    <div id="log" class="dropdown" onLoad={first}>
                     <button class="dropbtn">Recipes</button>
                     <div class="dropdown-content">
                         <a  href="/recipes">Recipe</a>
@@ -128,20 +142,20 @@ export function AdminNavbar() {
                            Login
                         </Link>
                     </li>
-                    <li id="log" className='nav-item'>
+                    {/* <li id="log" className='nav-item'onLoad={first}>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
-                    </li>
-                    <li id="log" className='nav-item'>
+                    </li> */}
+                    <li id="log" className='nav-item'onLoad={first}>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
                         </Link>
                     </li>
                 </ul>
-                {button && <Button id="log" buttonStyle='btn--outline'>SIGN UP</Button>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {/* {button && <Button id="log" buttonStyle='btn--outline'>SIGN UP</Button>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
                 <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
-                  Hi, {userName} 
+                  <p id= "log" onLoad={first}>Hi, {userName} </p>
                 </Link>
             </div>
         </nav>
