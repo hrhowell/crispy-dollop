@@ -15,10 +15,15 @@ import{UserRecipes} from './pages/UtilPages/Recipe/UserRecipes'
  * Availability: https://youtu.be/I2UBjN5ER4s
  *********************************************************************************/
 
-export function FirstNavbar() {
+export function AdminNavbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [admfx, setAdmfx] = useState(false);
+    const [userfx, setUserfx] = useState(false);
+    const [adm, setAdm] = useState(false);
+    const [log, setLog] = useState(false);
     const closeMobileMenu = ()=> setClick(false);
     const handleClick= ()=> setClick(!click);
 
@@ -30,12 +35,46 @@ export function FirstNavbar() {
         }
     };
 
+    // const showUserFx = ()=>{
+    //     if(userName ==="ADMIN"){
+    //         setIsAdmin(true);
+    //         setIsLoggedIn(true);
+    //         setButton(false);
+    //         setAdm(true);
+    //         setLog(true);
+    //         const admfx = document.getElementById("adm");
+    //         const userfx = document.getElementById("log");
+    //         admfx.style.display = "visible";
+    //         userfx.style.display = "visible";
+
+    //     }else if(userName !=null){
+    //         setIsLoggedIn(true);
+    //         setButton(false);
+    //         setLog(true);
+    //         const userfx = document.getElementById("log");
+    //         userfx.style.display = "visible";
+
+    //     }else{
+    //         setIsLoggedIn(false);
+    //         setIsAdmin(false);
+    //         setButton(true);
+    //         setAdm(false);
+    //         setLog(false);
+    //         const admfx = document.getElementById("adm");
+    //         const userfx = document.getElementById("log");
+    //         admfx.style.display = "hidden";
+    //         userfx.style.display = "hidden";
+
+    //     }
+    // }
+
     
     useEffect(()=> {
         showButton();
     },[]);
 
     window.addEventListener('resize', showButton);
+    // window.addEventListener('storage', showUserFx);
     const userName = sessionStorage.getItem('name')
 
     return (
@@ -61,45 +100,46 @@ export function FirstNavbar() {
                             All Users
                         </Link>
                     </li>
-                    {/* <li className='nav-item'>
+
+                    <li id="log" className='nav-item'>
                         <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
                            Profile
                         </Link>
-                    </li> */}
-                    {/* <li className='nav-item'>
+                    </li>
+
+                    <li className='nav-item'>
                         <Link to='/recipes' className='nav-links' onClick={closeMobileMenu}>
                             Recipes
                         </Link>
-                    </li> */}
+                    </li>
 
-                   
-                     <div class="dropdown">
+                    <div id="log" class="dropdown">
                     <button class="dropbtn">Recipes</button>
                     <div class="dropdown-content">
-                        <a href="/recipes">Recipe</a>
-                        <a href="/user-recipes">User Recipes</a>
-                        <a href="add-recipes">Add Recipes</a>
-                        <a href="pending-recipes">Pending Recipes</a>
+                        <a  href="/recipes">Recipe</a>
+                        <a  href="/user-recipes">User Recipes</a>
+                        <a  href="add-recipes">Add Recipes</a>
+                        <a  id = "adm" href="pending-recipes">Pending Recipes</a>
                     </div>
                     </div>
                      {/* added html */}
-                    {/* <li className='nav-item'>
+                    <li id="log" className='nav-item'>
                         <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
                            Login
                         </Link>
-                    </li> */}
-                    <li className='nav-item'>
+                    </li>
+                    <li id="log" className='nav-item'>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
                     </li>
-                    {/* <li className='nav-item'>
+                    <li id="log" className='nav-item'>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
                         </Link>
-                    </li> */}
+                    </li>
                 </ul>
-                {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+                {button && <Button id="log" buttonStyle='btn--outline'>SIGN UP</Button>}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
                   Hi, {userName} 
                 </Link>
@@ -109,4 +149,4 @@ export function FirstNavbar() {
     )
 }
 
-export default FirstNavbar
+export default AdminNavbar;

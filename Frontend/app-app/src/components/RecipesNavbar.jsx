@@ -15,7 +15,7 @@ import UserRecipes from './pages/UtilPages/Recipe/UserRecipes';
  * Availability: https://youtu.be/I2UBjN5ER4s
  *********************************************************************************/
 
-export function AdminNavbar2() {
+export function Navbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -38,7 +38,7 @@ export function AdminNavbar2() {
     window.addEventListener('resize', showButton);
 
     const userName = sessionStorage.getItem('name')
-    // const string = '  ';
+    
 
 
     return (
@@ -50,10 +50,7 @@ export function AdminNavbar2() {
                  <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
                   ThymeCrunch 
                 </Link>
-                {/* <span> Hi, {userName}</span> */}
-                {/* <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
-                  Hi, {userName} 
-                </Link> */}
+                
                 
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"}/>
@@ -69,49 +66,50 @@ export function AdminNavbar2() {
                             All Users
                         </Link>
                     </li>
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
                            Profile
                         </Link>
-                    </li>
+                    </li> */}
                     {/* <li className='nav-item'>
                         <Link to='/recipes' className='nav-links' onClick={closeMobileMenu}>
                             Recipes
                         </Link>
                     </li> */}
-                    <div class="dropdown">
+                    {/* <div class="dropdown">
                     <button class="dropbtn">Recipes</button>
                     <div class="dropdown-content">
                         <a href="/recipes">Recipe</a>
                         <a href="/user-recipes">User Recipes</a>
+                        <a href="add-recipes">Add Recipes</a>
                     </div>
-                    </div>
+                    </div> */}
                     {/* <li className='nav-item'>
                         <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
                            Login
                         </Link>
-                    </li> */}
-                    <li className='nav-item'>
+                    </li>  */}
+                    {/* {<li className='nav-item'>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
                     </li>
-                    {/* <li className='nav-item'>
+                     <li className='nav-item'>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
                         </Link>
                     </li> */}
-                </ul>
+                </ul> 
                 {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
-                <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
+                {/* <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
                 </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
                   Hi, {userName} 
-                </Link>
+                </Link> */}
             </div>
         </nav>
         </>
     )
 }
 
-export default AdminNavbar2
+export default Navbar

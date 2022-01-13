@@ -38,7 +38,7 @@ export function Navbar() {
     window.addEventListener('resize', showButton);
 
     const userName = sessionStorage.getItem('name')
-    const string = '  ';
+    
 
 
     return (
@@ -50,10 +50,7 @@ export function Navbar() {
                  <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
                   ThymeCrunch 
                 </Link>
-                {/* <span> Hi, {userName}</span> */}
-                {/* <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
-                  Hi, {userName} 
-                </Link> */}
+                
                 
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"}/>
@@ -91,17 +88,17 @@ export function Navbar() {
                         <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
                            Login
                         </Link>
-                    </li> */}
-                    {/* <li className='nav-item'>
+                    </li>  */}
+                    <li className='nav-item'>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
-                    </li> */}
-                    {/* <li className='nav-item'>
+                    </li>
+                     <li className='nav-item'>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
                         </Link>
-                    </li> */}
+                    </li>
                 </ul>
                 {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
                 <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
