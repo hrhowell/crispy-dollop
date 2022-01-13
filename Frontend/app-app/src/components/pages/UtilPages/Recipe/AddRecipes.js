@@ -32,7 +32,7 @@ export default function AddRecipes() {
      const e = thirdIngredient
      const f = fourthIngredient
      const g = fifthIngredient
-      axios.post(`http://localhost:9090/api/v1/recipes/users/add/${a}/${b}/${c}/${d}/${e}/${f}/${g}`)
+      axios.post(`http://3.14.3.79:9090/api/v1/recipes/users/add/${a}/${b}/${c}/${d}/${e}/${f}/${g}`)
         .then(response =>{
           if(response.data ==="ok" ) { navigate("/recipes");}
 

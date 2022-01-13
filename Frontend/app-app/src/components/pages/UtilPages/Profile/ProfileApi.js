@@ -18,7 +18,7 @@ export const ProfileConst = ()=> {
     const fetchUserProfile= ()=>{
         const username = sessionStorage.getItem('username')
       
-        axios.get(`http://localhost:9090/api/v1/users/${username}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.get(`http://3.14.3.79:9090/api/v1/users/${username}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setUserProfile(res.data);
         });
@@ -36,7 +36,7 @@ console.log(userProfile);
            <div key={userProfile.userID}>
            {userProfile.userID ? (
                <img 
-                   src={`http://localhost:9090/api/v1/users/${userProfile.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
+                   src={`http://3.14.3.79:9090/api/v1/users/${userProfile.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
                  />
            ):null}
           <br/>
@@ -70,7 +70,7 @@ console.log(userProfile);
           const formData = new FormData();
           formData.append("file", file);
 
-          axios.post(`http://localhost:9090/api/v1/users/${userID}/image/upload`, //http://3.14.3.79:9090/api/v1/users
+          axios.post(`http://3.14.3.79:9090/api/v1/users/${userID}/image/upload`, //http://3.14.3.79:9090/api/v1/users
                 formData, 
                     {
                         headers: {

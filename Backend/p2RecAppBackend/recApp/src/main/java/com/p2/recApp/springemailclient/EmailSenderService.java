@@ -32,6 +32,7 @@ public class EmailSenderService {
         mailSender.send(message);
         System.out.println("Mail Sent");
     }
+    
 public void sendRecipeEmail(String toEmail, String body, String subject) {
         
     	SimpleMailMessage message = new SimpleMailMessage();

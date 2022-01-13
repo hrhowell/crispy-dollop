@@ -23,7 +23,7 @@ export default function SignUp() {
 
     const fetchEmail = ()=>{
         var recipe = ""
-        axios.post(`http://localhost:9090/api/v1/email/email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.post(`http://3.14.3.79:9090/api/v1/email/email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setEmail(res.data);
         });
@@ -62,7 +62,7 @@ export default function SignUp() {
      const c = uemail
      const d = uuname
      const e = uupassword
-      axios.post(`http://localhost:9090/users/signup/${a}/${b}/${c}/${d}/${e}`)
+      axios.post(`http://3.14.3.79:9090/users/signup/${a}/${b}/${c}/${d}/${e}`)
         .then(response =>{
           if(response.data ==="ok" ) { navigate("/signup-email-sent");}
 

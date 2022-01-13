@@ -18,7 +18,7 @@ export default function Login() {
   function submit(){
      const a = uname
      const  b = upassword
-      axios.post(`http://localhost:9090/users/login/${a}/${b}`)
+      axios.post(`http://3.14.3.79:9090/users/login/${a}/${b}`)
         .then(response =>{
           const newName = response.data;
           sessionStorage.setItem('name', newName);

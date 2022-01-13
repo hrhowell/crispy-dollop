@@ -10,7 +10,7 @@ export const UserProfiles = ()=> {
     const [userProfiles, setUserProfiles] = useState([]);
 
     const fetchUserProfiles = ()=>{
-        axios.get("http://localhost:9090/api/v1/users").then(res =>{
+        axios.get("http://3.14.3.79:9090/api/v1/users").then(res =>{
             console.log(res);
             setUserProfiles(res.data);
         });
@@ -27,7 +27,7 @@ export const UserProfiles = ()=> {
             <div  key={index}>
                 {user.userID ? (
                     <img 
-                        src={`http://localhost:9090/api/v1/users/${user.userID}/image/download`}
+                        src={`http://3.14.3.79:9090/api/v1/users/${user.userID}/image/download`}
                     />
                 ):null}
                <br/>
@@ -56,7 +56,7 @@ export const UserProfiles = ()=> {
           const formData = new FormData();
           formData.append("file", file);
 
-          axios.post(`http://localhost:9090/api/v1/users/${userID}/image/upload`, 
+          axios.post(`http://3.14.3.79:9090/api/v1/users/${userID}/image/upload`, 
                 formData, 
                     {
                         headers: {

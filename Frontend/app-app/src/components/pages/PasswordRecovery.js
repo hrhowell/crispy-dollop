@@ -11,7 +11,7 @@ function PasswordRecovery() {
 
     const fetchEmail = ()=>{
         var recipe = ""
-        axios.post(`http://localhost:9090/api/v1/email/email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.post(`http://3.14.3.79:9090/api/v1/email/email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setEmail(res.data);
         });
@@ -50,7 +50,7 @@ function PasswordRecovery() {
                 <form onSubmit={(e) => submit(e)}>
                     <h2 id="h2">Did you lose something?</h2>
                     <br/>
-                    <h3 id="h2">Enter your email below and we will send you your password.</h3>
+                    <h2 id="h2">Enter your email below and we will send you your password.</h2>
                     <br/>
                     <label id="h2">Email:</label>
                     <input onChange={(e)=>handle(e)} id="email" value={email.email} placeholder="email" type="text" required></input>

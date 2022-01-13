@@ -25,7 +25,7 @@ export default function UpdateProfile() {
      const c = email
      const d = username
      const e = password
-      axios.post(`http://localhost:9090/users/UpdateProfile/${a}/${b}/${c}/${d}/${e}`)
+      axios.post(`http://3.14.3.79:9090/users/UpdateProfile/${a}/${b}/${c}/${d}/${e}`)
         .then(response =>{
           if(response.data ==="ok" ) { navigate("/recipes");}
 

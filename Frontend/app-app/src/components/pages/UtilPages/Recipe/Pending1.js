@@ -9,7 +9,7 @@ export const PendingRecipesConst1 = ()=> {
     const [userRecipes, setUserRecipes] = useState([]);
 
     const fetchUserRecipes = ()=>{
-        axios.get("http://localhost:9090/api/v1/recipes/users/pending").then(res =>{ //http://3.14.3.79:9090/api/v1/users
+        axios.get("http://3.14.3.79:9090/api/v1/recipes/users/pending").then(res =>{ //http://3.14.3.79:9090/api/v1/users
             console.log(res.data);
             setUserRecipes(res.data);
         });
@@ -28,7 +28,7 @@ export const PendingRecipesConst1 = ()=> {
             <div key={index}>
                 {/* {user.userID ? (
                     <img 
-                        src={`http://localhost:9090/api/v1/users/${user.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
+                        src={`http://3.14.3.79:9090/api/v1/users/${user.userID}/image/download`} //http://3.14.3.79:9090/api/v1/users
                     />
                 ):null} */}
                <br/>
@@ -57,7 +57,7 @@ export const PendingRecipesConst1 = ()=> {
     //       const formData = new FormData();
     //       formData.append("file", file);
 
-    //       axios.post(`http://localhost:9090/api/v1/users/${userID}/image/upload`, //http://3.14.3.79:9090/api/v1/users
+    //       axios.post(`http://3.14.3.79:9090/api/v1/users/${userID}/image/upload`, //http://3.14.3.79:9090/api/v1/users
     //             formData, 
     //                 {
     //                     headers: {

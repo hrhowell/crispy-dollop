@@ -11,7 +11,7 @@ export const Recipes = ()=> {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes = ()=>{
-        axios.get("http://localhost:9090/api/v1/recipes").then(res =>{
+        axios.get("http://3.14.3.79:9090/api/v1/recipes").then(res =>{
             console.log(res);
             setRecipes(res.data);
         });
@@ -28,7 +28,7 @@ export const Recipes = ()=> {
             <div key={index}>
                 {recipe.rec ? (
                     <img 
-                        src={`http://localhost:9090/api/v1/users/${user.userID}/image/download`}
+                        src={`http://3.14.3.79:9090/api/v1/users/${user.userID}/image/download`}
                     />
                 ):null}
                <br/>
@@ -53,7 +53,7 @@ export const Recipes = ()=> {
           const formData = new FormData();
           formData.append("file", file);
 
-          axios.post(`http://localhost:9090/api/v1/users/${userID}/image/upload`, 
+          axios.post(`http://3.14.3.79:9090/api/v1/users/${userID}/image/upload`, 
                 formData, 
                     {
                         headers: {

@@ -12,7 +12,7 @@ export const PendingRecipesConst = ()=> {
     
 
     const fetchUserRecipes = ()=>{
-        axios.get("http://localhost:9090/api/v1/recipes/users/pending").then(res =>{ //http://3.14.3.79:9090/api/v1/users
+        axios.get("http://3.14.3.79:9090/api/v1/recipes/users/pending").then(res =>{ //http://3.14.3.79:9090/api/v1/users
             console.log(res);
             setUserRecipes(res.data);
         });
@@ -28,7 +28,7 @@ export const PendingRecipesConst = ()=> {
 
     function statusFun(){
       
-         axios.post( `http://localhost:9090/api/v1/recipes/users/approve-deny/${recID}/${status}`)
+         axios.post( `http://3.14.3.79:9090/api/v1/recipes/users/approve-deny/${recID}/${status}`)
            .then(response =>{
               
              })

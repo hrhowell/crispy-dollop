@@ -14,7 +14,7 @@ export default function LuSearch() {
 
   function submit0(){
      const a = recipes
-      axios.post(`http://localhost:9090/api/v1/recipes/all-recipes/${a}/`)
+      axios.post(`http://3.14.3.79:9090/api/v1/recipes/all-recipes/${a}/`)
         .then(response =>{
         //   if(response.data ==="true" ) { navigate(`/${recipes}`);}
             if(response.data ===true) { navigate(`/${recipes}`);}

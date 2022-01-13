@@ -12,7 +12,7 @@ export const PadThaiIng = ()=> {
     const fetchPadThaiIng = ()=>{
         var recipe ="pad_thai";
         const username = sessionStorage.getItem('username');
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}/${username}`).then(res =>{
+        axios.get(`http://3.14.3.79:9090/api/v1/recipes/${recipe}/${username}`).then(res =>{
             console.log(res);
             setPadThaiIng(res.data);
         });
