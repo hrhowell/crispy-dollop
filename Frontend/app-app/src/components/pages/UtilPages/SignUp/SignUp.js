@@ -5,6 +5,7 @@ import FirstNavbar from '../../../FirstNavbar';
 
 import axios from "axios";
 import { useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 export default function SignUp() {
@@ -64,8 +65,8 @@ export default function SignUp() {
      const e = uupassword
       axios.post(`http://localhost:9090/users/signup/${a}/${b}/${c}/${d}/${e}`)
         .then(response =>{
-          if(response.data ==="ok" ) { navigate("/signup-email-sent");}
-
+          if(response.data ==="ok" ) { 
+            navigate("/signup-email-sent");}
         })
         .catch(err => {
             console.log("Error occured", err);

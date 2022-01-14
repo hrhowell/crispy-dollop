@@ -5,9 +5,7 @@ import FirstNavbar from '../../../FirstNavbar';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate} from 'react-router-dom';
-// import Alert1 from '../SessionStorage/Alert';
-import {Alert} from 'reactstrap'
-
+import swal from 'sweetalert';
 
 export default function Login() {
     const [uname, setUsername] = useState('');
@@ -28,8 +26,7 @@ export default function Login() {
           if(response.data ==="ADMIN" ) { 
             navigate("/adminrecipes");
           }else if(response.data === "no"){
-            <Alert>User not found</Alert>
-           
+            swal("User not found");
           }else {
             navigate("/recipes")
           }

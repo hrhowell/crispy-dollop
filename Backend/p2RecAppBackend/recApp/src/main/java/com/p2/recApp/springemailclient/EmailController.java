@@ -55,7 +55,7 @@ public class EmailController {
 		System.out.println("userEmail ##################" + email);
 		emailSenderService.sendRecipeEmail(email, temp,
 				"Yummmmy! Enjoy!");
-		return "redirect:/login";
+		return "redirect:/home";
 //		return "ok";
 	}
 	

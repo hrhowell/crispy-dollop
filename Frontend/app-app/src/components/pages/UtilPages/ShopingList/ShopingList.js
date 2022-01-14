@@ -3,6 +3,7 @@ import React, {useState, useEffect}from "react";
 import Navbar from "../../../Navbar"
 import './ShopingList.css';
 import {ShoppingListConst} from "./ShoppingIngApi";
+import swal from 'sweetalert';
 
 function ShopingList(){
     const [userEmail, setUserEmail] = useState('');
@@ -12,6 +13,11 @@ function ShopingList(){
         const  b = sessionStorage.getItem('username')
          axios.post(`http://localhost:9090/api/v1/email/soppinglist-email-sent/${a}/${b}`)
            .then(response =>{
+                swal({
+                    title: "Success!",
+                    text: "Checke you email! ",
+                    icon: "success",
+                });
              const userList = response.data;
              console.log.apply(userList)
              
