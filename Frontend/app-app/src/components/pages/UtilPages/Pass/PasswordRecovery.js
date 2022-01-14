@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from'axios';
 import Navbar from '../../../Navbar';
 import './PasswordRecovery.css';
+import { Link } from 'react-router-dom';
 
 function PasswordRecovery() {
     const url =""
@@ -50,13 +51,15 @@ function PasswordRecovery() {
                 <form onSubmit={(e) => submit(e)}>
                     <h2 id="h2">Did you lose something?</h2>
                     <br/>
-                    <h3 id="h2">Enter your email below and we will send you your password.</h3>
+                    <h2 id="h2">Enter your email below and we will send you your password.</h2>
                     <br/>
                     <label id="h2">Email:</label>
                     <input onChange={(e)=>handle(e)} id="email" value={email.email} placeholder="email" type="text" required></input>
                     <br/>
                     <br/>
+                    <Link to="/login" className='btn-mobile'>
                     <button class="button" id="h2">Submit</button>
+                    </Link>
                 </form>
             </div>
         </div>
