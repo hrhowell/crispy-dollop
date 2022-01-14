@@ -33,6 +33,12 @@ import lombok.ToString;
 
 public class Ingredient  {
 	
+	@Override
+	public String toString() {
+		return "Ingredient [ingID=" + ingID + ", ingName=" + ingName + ", recipe=" + recipe + ", ingType=" + ingType
+				+ ", mealType=" + mealType + "]";
+	}
+
 	@Id
 	
 	
@@ -100,7 +106,7 @@ public class Ingredient  {
 	}
 
 	@Column(name= "ing_name")
-	private String ingName;
+	public String ingName;
 	
 	@Column(name= "rec")
 	private String recipe;

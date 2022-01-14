@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  
+  #body{
+    font-family: "mumblers_demoregular";
+    /* background-color: orange; */
+    background-color: pink;
+    margin-left: 550px;
+  }
+  
+  .container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    border-radius: 5%;
+  }
+  
+  #groceries{
+    width: 900px;
+    min-height: 100vh;
+    padding-top: 20px;
+    margin:auto;
+    display: flex;
+    gap: 10px;
+    /* align-items: center; */
+    padding-left: 10%;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.50);  
+    border-radius: 5%;
+  }
+  
+  #title{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  #input{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #input i{
+    cursor: pointer;
+    font-size: 2rem;
+    color: orange;
+  }
+  
+  #input input{
+    font-family: inherit;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    border-bottom: 3px solid black;
+  }
+  
+  #all_items{
+    font-size: 1.5rem;
+    width: 30%;
+    background-color: transparent;
+    position: relative;
+    margin-top: 3%;
+  }
+  
+  @media(max-width:480px){
+    #title{
+      font-size: 1rem;
+    }
+  
+    #input i{
+      font-size: 1.5rem;
+    }
+  
+    #input input{
+      font-size: 1rem; 
+    }
+  
+    #all-items{
+      font-size: 1rem;
+    }
+  }
+  #user_input{
+      margin-left: 10px;;
+  }
+  #Shoping-button{
+      margin-top:10% ;
+      margin-bottom: 10%;
+  }
+  #shoppingEmail{
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+  }

@@ -5,6 +5,8 @@ import FirstNavbar from '../../../FirstNavbar';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate} from 'react-router-dom';
+// import Alert1 from '../SessionStorage/Alert';
+import {Alert} from 'reactstrap'
 
 
 export default function Login() {
@@ -25,17 +27,12 @@ export default function Login() {
           sessionStorage.setItem('username', uname);
           if(response.data ==="ADMIN" ) { 
             navigate("/adminrecipes");
-          }else{
-            // const newName = response.data;
-            // sessionStorage.setItem('name', newName);
+          }else if(response.data === "no"){
+            <Alert>User not found</Alert>
+           
+          }else {
             navigate("/recipes")
           }
-          // if(response.data ==="ok" ) { navigate("/recipes");}
-         
-
-          // response.data =="USER"{navigate("/recipes");}
-          // response.data =="ADMIN"{navigate("/admin-recipes");}
-
         })
         .catch(err => {
             console.log("Error occured", err);

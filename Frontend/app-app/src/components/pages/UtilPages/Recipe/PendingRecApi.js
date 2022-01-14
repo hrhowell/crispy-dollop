@@ -41,7 +41,7 @@ export const PendingRecipesConst = ()=> {
     return userRecipes.map((recipe, index) =>{
         return (
             <div id="pendingId"key={index}>
-                <p>Thyme to Get More Recipes!</p>
+             
                  <table className="bigTeble">
                 <thead>
                 <tr className='headerRow'>

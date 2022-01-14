@@ -10,7 +10,8 @@ export const PancakesIng = ()=> {
 
     const fetchPancakesIng = ()=>{
         var recipe ="pancakes";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{
+        const username = sessionStorage.getItem('username');
+        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}/${username}`).then(res =>{
             console.log(res);
             setPancakesIng(res.data);
         });

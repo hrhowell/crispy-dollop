@@ -11,8 +11,12 @@ function PendingRecipes(){
     <AdminNavbar2/>
     <div id="left">
     <PendingRecipesConst/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <div>
-      
+      <h3>Thyme to get more recipes!</h3>
     </div>
       
     

@@ -21,13 +21,10 @@ import com.p2.recApp.users.User;
 @Transactional()
 public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 
-//	Optional<Recipe> getRecipe(Recipe recipe);
-//	List<Recipe> allRecipes();
 	List<Recipe> findByStatus(String status); 
-//	Recipe findByRec_name(String recName); 
 	List<Recipe> findByRecName(String recName); 
 	Optional <Recipe> findByRecID(Integer recID);
-	//Optional<Recipe> findByRec_name(String recName); 
+	
 
 
 }

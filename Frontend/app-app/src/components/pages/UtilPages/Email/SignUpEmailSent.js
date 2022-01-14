@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from'axios';
 import { Link } from 'react-router-dom';
-import Navbar from '../../../Navbar';
+import FirstNavbar from '../../../FirstNavbar';
 import './SignUpEmailSent.css';
 
 
@@ -10,10 +10,10 @@ function SignUpEmailSent() {
     const [email, setEmail] = useState({
         email: ""
     })    
-
+    const userEmail = sessionStorage.getItem('email');
     const fetchEmail = ()=>{
         var recipe = ""
-        axios.post(`http://localhost:9090/api/v1/email/signup-email-sent`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
+        axios.post(`http://localhost:9090/api/v1/email/signup-email-sent/${userEmail}`).then(res =>{ //http://3.14.3.79:9090/api/v1/recipes/
             console.log(res);
             setEmail(res.data);
         });
@@ -45,7 +45,7 @@ function SignUpEmailSent() {
 
     return (
         <>
-        <Navbar/>
+        <FirstNavbar/>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
             <div class="container">
                 <form onSubmit={(e) => home(e)}>
@@ -54,7 +54,7 @@ function SignUpEmailSent() {
                     <h2 id="h2">Check your email to view our greeting!</h2>
                     <br/>
                     <Link to="/" className='btn-mobile'>
-                    <button class="button" id="h2">Home</button>
+                    <button class="button" id="h2" onClick={fetchEmail}>Home</button>
                     </Link>
                 </form>
             </div>

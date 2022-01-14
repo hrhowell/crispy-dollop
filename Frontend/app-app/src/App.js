@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Users from '././components/pages/UtilPages/Profile/Users';
 import Home  from './components/pages/UtilPages/Home/Home';
 import Login from './components/pages/UtilPages/Login/Login';
+import ShopingList from './components/pages/UtilPages/ShopingList/ShopingList';
 import Logout from './components/pages/UtilPages/Logout/Logout';
 import SignUp from './components/pages/UtilPages/SignUp/SignUp';
 import UpdateProfile from './components/pages/UtilPages/Profile/UpdateProfile';
@@ -75,6 +76,7 @@ function App() {
         <Route path ="/users" element ={<Users/>}/>
         <Route path ="/profile" element ={<Profile/>}/>
         <Route path ="/login" element={<Login/>}/>
+        <Route path ="/shopinglist" element={<ShopingList/>}/>
         <Route path ="/recipes" element={<Recipes/>}/>
         <Route path ="/adminrecipes" element={<AdminRecipes/>}/>
         <Route path ="/add-recipes" element={<AddRecipes/>}/>

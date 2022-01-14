@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.p2.recApp.shopinglist.ShopingList;
+import com.p2.recApp.shopinglist.ShopingListRepository;
 import com.p2.recApp.users.User;
 import com.p2.recApp.users.UserService;
 
@@ -21,6 +23,10 @@ import com.p2.recApp.users.UserService;
 @RequestMapping("/api/v1/recipes")
 @CrossOrigin("*")
 public class IngredientController {
+	
+//	public List<Ingredient> userIngredient = new ArrayList<>();
+//	public Recipe userRecipe = new Recipe();
+	ShopingListRepository shopingListRepository;
 	
 	private final IngredientService ingredientService;
 //	private ArrayList<Recipe> recipes = new ArrayList<>();
@@ -44,8 +50,9 @@ public class IngredientController {
 	private Recipe avocado_toast;
 	private Recipe granola;
 	@Autowired
-	public IngredientController(IngredientService ingredientService) {
+	public IngredientController(IngredientService ingredientService, ShopingListRepository shopingListRepository) {
 		this.ingredientService = ingredientService;
+		this.shopingListRepository = shopingListRepository;
 	}
 	
 	@GetMapping
@@ -53,9 +60,23 @@ public class IngredientController {
 		return ingredientService.getAllIng();
 	}
 	
-	@GetMapping("/{recipe}")
-	public List<Ingredient> getByRec(@PathVariable("recipe") String recipe){
-		return ingredientService.getByRec(recipe);
+//	@GetMapping("/{recipe}")
+	@GetMapping("/{recipe}/{username}")
+	public List<Ingredient> getByRec(@PathVariable("recipe") String recipe, @PathVariable String username){
+//		return ingredientService.getByRec(recipe);
+		List<Ingredient> newRecipe = ingredientService.getByRec(recipe);
+
+//		ShopingList shopinglist = new ShopingList();
+		for(Ingredient a: newRecipe) {
+			ShopingList shopinglist = new ShopingList(username, a.ingName );
+//			shopinglist.setUsername(username);
+//			shopinglist.setIngredientName(a.ingName); 
+			shopingListRepository.save(shopinglist);
+			System.out.println("shopinglist" + shopinglist);
+		}
+		
+		return newRecipe;
+		
 	}
 	
 //	public ArrayList<Recipe> recipes(){

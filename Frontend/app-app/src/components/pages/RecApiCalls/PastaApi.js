@@ -10,7 +10,8 @@ export const PastaIng = ()=> {
 
     const fetchPastaIng = ()=>{
         var recipe ="pasta";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{
+        const username = sessionStorage.getItem('username');
+        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}/${username}`).then(res =>{
             console.log(res);
             setPastaIng(res.data);
         });

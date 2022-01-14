@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amazonaws.services.cognitoidp.model.UserNotFoundException;
+import com.p2.recApp.configuration.ConfigClass;
 import com.p2.recApp.users.*;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -43,9 +45,13 @@ public class LoginController {
 	//9090/users/1/test
 	@PostMapping("/users/login/{username}/{password}")
 	public String login1(@PathVariable String username, @PathVariable String password) {
-		Optional<User> uname = userRepository.findByUsername(username);
-		//Optional<User> upassword = userRepository.findByPassword(password);
 		
+		
+//		AnnotationConfigApplicationContext  context = new AnnotationConfigApplicationContext(ConfigClass.class);
+//		LoginPOJO login = context.getBean("loginPOJO", LoginPOJO.class);
+//		login.loginData();
+		
+		Optional<User> uname = userRepository.findByUsername(username);
 		User user = uname.get();
 		String name = user.getFirstname();
 		
@@ -64,13 +70,6 @@ public class LoginController {
 			return "no";		
 		}
 		
-		
-//		if(user.getPassword().equals(password)) {
-//			return "ok";
-//		}else {
-//			return "no";		
-//		}
-//		
 	}
 
 	

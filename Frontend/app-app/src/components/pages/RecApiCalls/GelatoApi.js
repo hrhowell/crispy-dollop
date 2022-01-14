@@ -12,7 +12,8 @@ export const GelatoIng = ()=> {
 
     const fetchGelatoIng = ()=>{
         var recipe = "black_forest_gelato_with_ganache";
-        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}`).then(res =>{
+        const username = sessionStorage.getItem('username');
+        axios.get(`http://localhost:9090/api/v1/recipes/${recipe}/${username}`).then(res =>{
             console.log(res);
             setGelatoIng(res.data);
         });

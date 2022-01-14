@@ -95,16 +95,24 @@ export function Navbar() {
                            Login
                         </Link>
                     </li> */}
-                    {/* <li className='nav-item'>
+                    <li className='nav-item'>
                         <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                            Logout
                         </Link>
-                    </li> */}
+                    </li>
                     {/* <li className='nav-item'>
                         <Link to='/update' className='nav-links' onClick={closeMobileMenu}>
                             Update 
                         </Link>
                     </li> */}
+
+                    <li className='nav-item'>
+                        <Link to='/shopinglist' className='nav-links' onClick={closeMobileMenu}>
+                            Shoping List 
+                            &nbsp;<i class="fas fa-shopping-cart"></i>
+                           
+                        </Link>
+                    </li>
                 </ul>
                 {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
                 <Link to="/" className='navbarLogo' onClick={closeMobileMenu}>
