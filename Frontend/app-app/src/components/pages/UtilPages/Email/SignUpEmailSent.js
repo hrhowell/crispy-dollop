@@ -51,7 +51,7 @@ function SignUpEmailSent() {
                 <form onSubmit={(e) => home(e)}>
                     <h2 id="h2">We are glad you Signed Up!</h2>
                     <br/>
-                    <h3 id="h2">Check your email to view our greeting!</h3>
+                    <h2 id="h2">Check your email to view our greeting!</h2>
                     <br/>
                     <Link to="/" className='btn-mobile'>
                     <button class="button" id="h2" onClick={fetchEmail}>Home</button>
