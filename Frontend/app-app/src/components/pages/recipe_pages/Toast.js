@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {ToastIng} from '../RecApiCalls/ToastApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { BreakfastButton } from "../../buttons/BreakfastButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Toast () {
@@ -18,8 +18,15 @@ function Toast () {
     <hr/>
     </div>
     <ToastIng/>
-    <RecipeButton/>
+    <BreakfastButton/>
     <EmailButton/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
     </>
     )

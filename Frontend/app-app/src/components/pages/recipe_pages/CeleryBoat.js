@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {CeleryIng} from '../RecApiCalls/CeleryApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { SnackButton } from "../../buttons/SnackButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 
@@ -20,8 +20,15 @@ function CeleryBoat (){
     <hr/>
     </div>
     <CeleryIng/>
-    <RecipeButton/>
+    <SnackButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )

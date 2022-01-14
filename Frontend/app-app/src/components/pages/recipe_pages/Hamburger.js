@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { HamburgerIng } from '../RecApiCalls/HamburgerApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { DinnerButton } from "../../buttons/DinnerButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Hamburger (){
@@ -18,8 +18,14 @@ function Hamburger (){
     <hr/>
     </div>
     <HamburgerIng/>
-    <RecipeButton/>
+    <DinnerButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )

@@ -3,7 +3,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { BentoIng } from '../RecApiCalls/BentoApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { LunchButton } from "../../buttons/LunchButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Bento (){
@@ -22,8 +22,14 @@ function Bento (){
     <hr/>
     </div>
     <BentoIng/>
-    <RecipeButton/>
+    <LunchButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )

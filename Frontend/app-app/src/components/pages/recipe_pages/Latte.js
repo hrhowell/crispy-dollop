@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import  { LatteIng } from '../RecApiCalls/LatteApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { BeveragesButton } from "../../buttons/BeveragesButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Latte (){
@@ -18,8 +18,18 @@ function Latte (){
     <hr/>
     </div>
     <LatteIng/>
-    <RecipeButton/>
+    <BeveragesButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     
     </div>
     </> 
     )

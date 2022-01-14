@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { PunchIng } from '../RecApiCalls/PunchApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { BeveragesButton } from "../../buttons/BeveragesButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Punch (){
@@ -18,8 +18,16 @@ function Punch (){
     <hr/>
     </div>
     <PunchIng/>
-    <RecipeButton/>
+    <BeveragesButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )

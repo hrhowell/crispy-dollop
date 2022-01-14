@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import {GranolaIng} from '../RecApiCalls/GranolaApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { BreakfastButton } from "../../buttons/BreakfastButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Granola (){
@@ -18,8 +18,15 @@ function Granola (){
     <hr/>
     </div>
     <GranolaIng/>
-    <RecipeButton/>
+    <BreakfastButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )

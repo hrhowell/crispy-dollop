@@ -3,7 +3,7 @@ import React from "react"
 import Navbar from "../../Navbar";
 import '../UtilPages/Profile/UserProfiles.css';
 import { SaladIng } from '../RecApiCalls/SaladApi';
-import { RecipeButton } from "../../buttons/RecipeButton";
+import { LunchButton } from "../../buttons/LunchButton";
 import { EmailButton } from "../../buttons/EmailRecipe";
 
 function Salad (){
@@ -21,8 +21,12 @@ function Salad (){
     </div>
     
     <SaladIng/>
-    <RecipeButton/>
+    <LunchButton/>
     <EmailButton/>
+    <br/>
+     <br/>
+     <br/>
+     <br/>
     </div>
     </>
     )
